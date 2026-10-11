@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img">
+<title>Full Arsenal</title>
+<desc>Cyber-terminal control room interface for Tahir.</desc>
+
+<defs>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+    <path d="M0 3.5H4" stroke="#55C8FF" stroke-opacity=".035"/>
+  </pattern>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#55C8FF" stroke-opacity=".045"/>
+  </pattern>
+</defs>
+<rect width="1200" height="700" rx="18" fill="#02060B"/>
+<rect x="1" y="1" width="1198" height="698" rx="17" fill="none" stroke="#55C8FF" stroke-opacity=".34"/>
+<path d="M22 1h92l12 12h150M1178 1h-74l-12 12h-102" fill="none" stroke="#55C8FF" stroke-opacity=".6"/>
+<rect width="1200" height="700" rx="18" fill="url(#grid)"/>
+<rect width="1200" height="700" rx="18" fill="url(#scan)"/>
+<text x="24" y="30" fill="#7299B4" font-family="ui-monospace,Consolas,monospace" font-size="11" letter-spacing="2">CR://ARSENAL_INDEX / EXPANDED_VIEW</text>
+<circle cx="1170" cy="25" r="4" fill="#65F7B2"/>
+
+
+<text x="32" y="68" fill="#55C8FF" font-family="ui-monospace,Consolas,monospace" font-size="12" letter-spacing="3">03B // FULL TECH ARSENAL</text>
+<text x="32" y="92" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="11" font-weight="400" letter-spacing="1">GROUPED BY SYSTEM RESPONSIBILITY — COMPACT, SEARCHABLE, DEPLOYMENT-SAFE</text>
+
+<rect x="35" y="112" width="540" height="165" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M35 134V112h22M575 255v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="59" y="146" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="1">01 / QA + AUTOMATION</text>
+<g transform="translate(59 170)">
+  <rect width="110" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M110 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Playwright</text>
+</g>
+<g transform="translate(179 170)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Selenium</text>
+</g>
+<g transform="translate(283 170)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Gauge</text>
+</g>
+<g transform="translate(387 170)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Postman</text>
+</g>
+<g transform="translate(59 214)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">JMeter</text>
+</g>
+<g transform="translate(163 214)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">k6</text>
+</g>
+<rect x="610" y="112" width="540" height="165" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M610 134V112h22M1150 255v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="634" y="146" fill="#008CFF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="1">02 / DEVOPS + INFRA</text>
+<g transform="translate(634 170)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#008CFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#008CFF"/>
+  <circle cx="17" cy="17" r="3" fill="#008CFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Docker</text>
+</g>
+<g transform="translate(738 170)">
+  <rect width="110" height="34" rx="5" fill="#07111C" stroke="#008CFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M110 26v8h-8" fill="none" stroke="#008CFF"/>
+  <circle cx="17" cy="17" r="3" fill="#008CFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Kubernetes</text>
+</g>
+<g transform="translate(858 170)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#008CFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#008CFF"/>
+  <circle cx="17" cy="17" r="3" fill="#008CFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Kafka</text>
+</g>
+<rect x="35" y="302" width="540" height="165" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M35 324V302h22M575 445v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="59" y="336" fill="#A9EAFF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="1">03 / BACKEND</text>
+<g transform="translate(59 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#A9EAFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#A9EAFF"/>
+  <circle cx="17" cy="17" r="3" fill="#A9EAFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">.NET</text>
+</g>
+<g transform="translate(163 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#A9EAFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#A9EAFF"/>
+  <circle cx="17" cy="17" r="3" fill="#A9EAFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">C#</text>
+</g>
+<g transform="translate(267 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#A9EAFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#A9EAFF"/>
+  <circle cx="17" cy="17" r="3" fill="#A9EAFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Node.js</text>
+</g>
+<g transform="translate(371 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#A9EAFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#A9EAFF"/>
+  <circle cx="17" cy="17" r="3" fill="#A9EAFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Java</text>
+</g>
+<g transform="translate(59 404)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#A9EAFF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#A9EAFF"/>
+  <circle cx="17" cy="17" r="3" fill="#A9EAFF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Spring</text>
+</g>
+<rect x="610" y="302" width="540" height="165" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M610 324V302h22M1150 445v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="634" y="336" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="1">04 / FRONTEND</text>
+<g transform="translate(634 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">React</text>
+</g>
+<g transform="translate(738 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Next.js</text>
+</g>
+<g transform="translate(842 360)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Vue.js</text>
+</g>
+<g transform="translate(946 360)">
+  <rect width="110" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M110 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">JavaScript</text>
+</g>
+<g transform="translate(634 404)">
+  <rect width="110" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M110 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">TypeScript</text>
+</g>
+<g transform="translate(754 404)">
+  <rect width="126" height="34" rx="5" fill="#07111C" stroke="#55C8FF" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M126 26v8h-8" fill="none" stroke="#55C8FF"/>
+  <circle cx="17" cy="17" r="3" fill="#55C8FF"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Tailwind CSS</text>
+</g>
+<rect x="35" y="492" width="540" height="165" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M35 514V492h22M575 635v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="59" y="526" fill="#FFC857" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="1">05 / DESKTOP + GAME + 3D</text>
+<g transform="translate(59 550)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#FFC857" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#FFC857"/>
+  <circle cx="17" cy="17" r="3" fill="#FFC857"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Tauri</text>
+</g>
+<g transform="translate(163 550)">
+  <rect width="118" height="34" rx="5" fill="#07111C" stroke="#FFC857" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M118 26v8h-8" fill="none" stroke="#FFC857"/>
+  <circle cx="17" cy="17" r="3" fill="#FFC857"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Electron.js</text>
+</g>
+<g transform="translate(291 550)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#FFC857" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#FFC857"/>
+  <circle cx="17" cy="17" r="3" fill="#FFC857"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Godot</text>
+</g>
+<g transform="translate(395 550)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#FFC857" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#FFC857"/>
+  <circle cx="17" cy="17" r="3" fill="#FFC857"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Unity</text>
+</g>
+<g transform="translate(59 594)">
+  <rect width="94" height="34" rx="5" fill="#07111C" stroke="#FFC857" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M94 26v8h-8" fill="none" stroke="#FFC857"/>
+  <circle cx="17" cy="17" r="3" fill="#FFC857"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Blender</text>
+</g>
+<rect x="610" y="492" width="540" height="165" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M610 514V492h22M1150 635v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="634" y="526" fill="#65F7B2" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="1">06 / AI ENGINEERING</text>
+<g transform="translate(634 550)">
+  <rect width="150" height="34" rx="5" fill="#07111C" stroke="#65F7B2" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M150 26v8h-8" fill="none" stroke="#65F7B2"/>
+  <circle cx="17" cy="17" r="3" fill="#65F7B2"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">LLM Integration</text>
+</g>
+<g transform="translate(794 550)">
+  <rect width="142" height="34" rx="5" fill="#07111C" stroke="#65F7B2" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M142 26v8h-8" fill="none" stroke="#65F7B2"/>
+  <circle cx="17" cy="17" r="3" fill="#65F7B2"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Model Training</text>
+</g>
+<g transform="translate(946 550)">
+  <rect width="102" height="34" rx="5" fill="#07111C" stroke="#65F7B2" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M102 26v8h-8" fill="none" stroke="#65F7B2"/>
+  <circle cx="17" cy="17" r="3" fill="#65F7B2"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">AI Agents</text>
+</g>
+<g transform="translate(634 594)">
+  <rect width="134" height="34" rx="5" fill="#07111C" stroke="#65F7B2" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M134 26v8h-8" fill="none" stroke="#65F7B2"/>
+  <circle cx="17" cy="17" r="3" fill="#65F7B2"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Orchestration</text>
+</g>
+<g transform="translate(778 594)">
+  <rect width="198" height="34" rx="5" fill="#07111C" stroke="#65F7B2" stroke-opacity=".45"/>
+  <path d="M0 8V0h8M198 26v8h-8" fill="none" stroke="#65F7B2"/>
+  <circle cx="17" cy="17" r="3" fill="#65F7B2"/>
+  <text x="29" y="22" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="12" font-weight="400" letter-spacing="0.4">Intelligent Workflows</text>
+</g>
+
+</svg>

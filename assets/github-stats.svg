@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img">
+<title>Github Stats</title>
+<desc>Cyber-terminal control room interface for Tahir.</desc>
+
+<defs>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+    <path d="M0 3.5H4" stroke="#55C8FF" stroke-opacity=".035"/>
+  </pattern>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#55C8FF" stroke-opacity=".045"/>
+  </pattern>
+</defs>
+<rect width="1200" height="330" rx="18" fill="#02060B"/>
+<rect x="1" y="1" width="1198" height="328" rx="17" fill="none" stroke="#55C8FF" stroke-opacity=".34"/>
+<path d="M22 1h92l12 12h150M1178 1h-74l-12 12h-102" fill="none" stroke="#55C8FF" stroke-opacity=".6"/>
+<rect width="1200" height="330" rx="18" fill="url(#grid)"/>
+<rect width="1200" height="330" rx="18" fill="url(#scan)"/>
+<text x="24" y="30" fill="#7299B4" font-family="ui-monospace,Consolas,monospace" font-size="11" letter-spacing="2">CR://GITHUB_TELEMETRY / PUBLIC_API</text>
+<circle cx="1170" cy="25" r="4" fill="#65F7B2"/>
+
+
+<text x="32" y="68" fill="#55C8FF" font-family="ui-monospace,Consolas,monospace" font-size="12" letter-spacing="3">06 // GITHUB ACTIVITY SNAPSHOT</text>
+<text x="32" y="94" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="11" font-weight="400" letter-spacing="1">REAL PUBLIC DATA • LOCALLY RENDERED • NO THIRD-PARTY CARD SERVICE</text>
+
+<rect x="33" y="124" width="264" height="142" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M33 146V124h22M297 244v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="55" y="155" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2">01 / PUBLIC REPOS</text><text x="55" y="220" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="48" font-weight="700" letter-spacing="0">16</text><text x="131" y="218" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="400" letter-spacing="0.3">GitHub account total</text><circle cx="269" cy="152" r="4" fill="#65F7B2"/>
+<rect x="321" y="124" width="264" height="142" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M321 146V124h22M585 244v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="343" y="155" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2">02 / SOURCE REPOS</text><text x="343" y="220" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="48" font-weight="700" letter-spacing="0">14</text><text x="419" y="218" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="400" letter-spacing="0.3">Owned • non-fork</text><circle cx="557" cy="152" r="4" fill="#65F7B2"/>
+<rect x="609" y="124" width="264" height="142" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M609 146V124h22M873 244v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="631" y="155" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2">03 / PRIMARY LANGS</text><text x="631" y="220" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="48" font-weight="700" letter-spacing="0">6</text><text x="707" y="218" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="400" letter-spacing="0.3">Detected in source repos</text><circle cx="845" cy="152" r="4" fill="#65F7B2"/>
+<rect x="897" y="124" width="264" height="142" rx="10" fill="#07111C" fill-opacity="0.9" stroke="#55C8FF" stroke-opacity=".25"/>
+<path d="M897 146V124h22M1161 244v22h-22" fill="none" stroke="#55C8FF" stroke-opacity=".85"/><text x="919" y="155" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.2">04 / FOLLOWERS</text><text x="919" y="220" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="48" font-weight="700" letter-spacing="0">13</text><text x="995" y="218" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="9" font-weight="400" letter-spacing="0.3">Public account signal</text><circle cx="1133" cy="152" r="4" fill="#65F7B2"/>
+<text x="32" y="304" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1">SYNC 2026-10-11 UTC</text>
+<text x="1168" y="304" fill="#A9EAFF" fill-opacity="1" text-anchor="end" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="0.5">SOURCE // api.github.com/users/thrturker1</text>
+
+</svg>
