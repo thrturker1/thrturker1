@@ -16,7 +16,6 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 ASSETS = ROOT / "assets"
-ARSENAL = ROOT / "arsenal"
 FEATURED = ["Blender", "Godot", "Unity", ".NET"]
 PUBLIC_LINKS = {
     "https://github.com/thrturker1",
@@ -28,12 +27,11 @@ PUBLIC_LINKS = {
 PROFILE_ASSETS = {
     "hero.svg", "hero-static.svg", "stack.svg", "studio.svg", "studio-static.svg",
     "terminal.gif", "terminal-static.svg", "terminal-static.png", "github-stats.svg",
-    "nav-prev.svg", "nav-next.svg",
     *(f"stack-page-{index}.svg" for index in range(1, 8)),
     *(f"social-{name}.svg" for name in ("github", "linkedin", "instagram", "portfolio", "studio")),
 }
 TRIGGER_PATHS = {
-    "README.md", "PROFILE-STATIC.md", "arsenal/**", "assets/**",
+    "README.md", "PROFILE-STATIC.md", "assets/**",
     "tools/**", "requirements.txt", ".github/workflows/**",
 }
 
@@ -52,10 +50,7 @@ def local_tag(name: str) -> str:
 
 
 def generated_state() -> dict[str, str]:
-    paths = [
-        *(path for path in ASSETS.rglob("*") if path.is_file()),
-        *ARSENAL.glob("*.md"),
-    ]
+    paths = [path for path in ASSETS.rglob("*") if path.is_file()]
     return {path.relative_to(ROOT).as_posix(): sha(path) for path in paths}
 
 
@@ -106,7 +101,7 @@ def validate_assets() -> None:
             f"Static fallback contains animation or style rules: {name}",
         )
     with Image.open(ASSETS / "terminal-static.png") as image:
-        require(image.size == (1080, 240), "Terminal PNG fallback has incorrect dimensions")
+        require(image.size == (1200, 240), "Terminal PNG fallback has incorrect dimensions")
 
 
 def validate_cards() -> None:
@@ -142,7 +137,7 @@ def validate_gif() -> None:
     path = ASSETS / "terminal.gif"
     require(path.stat().st_size <= 2_000_000, "terminal.gif exceeds its 2 MB budget")
     with Image.open(path) as image:
-        require(image.size == (1080, 240), "terminal.gif must be 1080x240")
+        require(image.size == (1200, 240), "terminal.gif must be 1200x240")
         require(getattr(image, "is_animated", False) and image.n_frames >= 20, "Terminal GIF lacks meaningful animation")
         distinct = set()
         for frame in range(image.n_frames):
@@ -179,9 +174,7 @@ def document_links(source: str) -> tuple[set[str], HTMLLinks]:
 
 
 def validate_documents() -> None:
-    pages = sorted(ARSENAL.glob("*.md"))
-    require({path.name for path in pages} == {f"{index}.md" for index in range(1, 8)}, "Seven manual technology pages are required")
-    documents = [README, ROOT / "PROFILE-STATIC.md", *pages]
+    documents = [README, ROOT / "PROFILE-STATIC.md"]
     for document in documents:
         require(document.is_file(), f"Missing profile document: {document.name}")
         source = document.read_text(encoding="utf-8")
@@ -199,6 +192,10 @@ def validate_documents() -> None:
             require(not html.headings and not re.search(r"(?m)^\s{0,3}#{1,6}\s", source), "Main README must not contain section headings")
             removed = {"verify-create.svg", "agent-network.svg", "primary-stack.svg", "featured-stack.svg", "contact.svg", "full-arsenal.svg"}
             require(not any(Path(urlsplit(link).path).name in removed for link in links), "Main README still references an obsolete panel")
+            require("github-stats.svg" not in source, "Main README still displays the removed GitHub telemetry panel")
+            require("arsenal/" not in source and "nav-prev.svg" not in source and "nav-next.svg" not in source, "Main README still exposes manual technology navigation")
+            order = [source.find(name) for name in ("hero.svg", "terminal.gif", "stack.svg", "studio.svg")]
+            require(all(position >= 0 for position in order) and order == sorted(order), "Continuous chassis order must be hero, terminal, deck, studio")
 
 
 def validate_workflows() -> None:
@@ -242,7 +239,7 @@ def main() -> None:
     validate_documents()
     validate_workflows()
     size = (ASSETS / "terminal.gif").stat().st_size / 1024
-    print(f"Validated deterministic assets/pages, safe SVGs, seven 4x2 card pages, terminal GIF ({size:.1f} KiB), all profile links, and workflows.")
+    print(f"Validated deterministic assets, seamless profile order, safe SVGs, automatic seven-page 4x2 deck, terminal GIF ({size:.1f} KiB), links, and workflows.")
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
       <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5"/></filter>
       <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#7299B4" opacity=".19"/></pattern>
       <pattern id="scan" width="3" height="5" patternUnits="userSpaceOnUse"><path d="M0 0H3" stroke="#55C8FF" opacity=".018"/></pattern>
-    </defs><rect x=".5" y=".5" width="1199" height="341" rx="18" fill="#02060B" stroke="url(#edge)"/><rect x="1" y="1" width="1198" height="340" rx="17" fill="url(#dots)"/><g data-tech="Blender">
+    </defs><rect width="1200" height="342" fill="#02060B"/><path d="M.5 0V342M1199.5 0V342" stroke="url(#edge)"/><rect x="1" width="1198" height="342" fill="url(#dots)"/><g data-tech="Blender">
       <rect x="38" y="54" width="269" height="111" rx="12" fill="#07111C" stroke="#55C8FF" stroke-opacity=".42"/>
       <path d="M56 165h233" stroke="#F79D55" opacity=".3"/>
       <rect x="52" y="74" width="70" height="70" rx="17" fill="#F79D55" opacity=".055"/>

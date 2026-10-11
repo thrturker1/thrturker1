@@ -1,42 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="266" viewBox="0 0 1200 266" role="img" aria-labelledby="title desc"><title id="title">Addictity Games — enter the studio</title><desc id="desc">Independent game studio. Strong mechanics. Replayability. Identity. An original animated dimensional gateway; click to visit addictitygames.com.</desc><defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="278" viewBox="0 0 1200 278" role="img" aria-labelledby="title desc"><title id="title">Addictity Games — games in development</title><desc id="desc">Addictity Games. No Respite and Goblet are in development. Click to visit addictitygames.com.</desc><defs>
       <linearGradient id="edge"><stop stop-color="#55C8FF" stop-opacity=".6"/><stop offset=".5" stop-color="#55C8FF" stop-opacity=".1"/><stop offset="1" stop-color="#008CFF" stop-opacity=".3"/></linearGradient>
       <radialGradient id="aura"><stop stop-color="#008CFF" stop-opacity=".2"/><stop offset="1" stop-color="#008CFF" stop-opacity="0"/></radialGradient>
       <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".6" stop-color="#A9EAFF"/><stop offset="1" stop-color="#55C8FF"/></linearGradient>
       <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5"/></filter>
       <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#7299B4" opacity=".19"/></pattern>
       <pattern id="scan" width="3" height="5" patternUnits="userSpaceOnUse"><path d="M0 0H3" stroke="#55C8FF" opacity=".018"/></pattern>
-    </defs><rect x=".5" y=".5" width="1199" height="265" rx="18" fill="#02060B" stroke="url(#edge)"/><rect x="1" y="1" width="1198" height="264" rx="17" fill="url(#dots)"/>
-    <defs><clipPath id="studioClip"><rect x="1" y="1" width="1198" height="264" rx="17"/></clipPath>
-      <linearGradient id="portal" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#07111C"/><stop offset=".58" stop-color="#008CFF" stop-opacity=".08"/><stop offset="1" stop-color="#A9EAFF" stop-opacity=".5"/></linearGradient></defs>
+    </defs><path d="M0 0V260Q0 278 18 278H1182Q1200 278 1200 260V0Z" fill="#02060B"/><path d="M.5 0V260Q.5 277.5 18 277.5H1182Q1199.5 277.5 1199.5 260V0" fill="none" stroke="url(#edge)"/><path d="M1 0V260Q1 277 18 277H1182Q1199 277 1199 260V0Z" fill="url(#dots)"/>
+    <defs>
+      <linearGradient id="projectA" x1="0" x2="1"><stop stop-color="#0B1722"/><stop offset="1" stop-color="#102436"/></linearGradient>
+      <linearGradient id="projectB" x1="0" x2="1"><stop stop-color="#0B1722"/><stop offset="1" stop-color="#181B35"/></linearGradient>
+      <clipPath id="studioClip"><path d="M1 0V260Q1 277 18 277H1182Q1199 277 1199 260V0Z"/></clipPath>
+    </defs>
     <style>
-    .gate{animation:gate 6s ease-in-out infinite} .spark{animation:spark 6s ease-in-out infinite}
-    .horizon{animation:horizon 7s ease-in-out infinite}
-    @keyframes gate{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    @keyframes spark{0%{stroke-dashoffset:640}100%{stroke-dashoffset:0}}
-    @keyframes horizon{0%,100%{opacity:.15}50%{opacity:.35}}
+    .signal{animation:signal 4.8s ease-in-out infinite} .scanA{animation:scanA 5.4s linear infinite}
+    .scanB{animation:scanB 6.2s linear infinite} .core{transform-origin:126px 174px;animation:core 18s linear infinite}
+    @keyframes signal{0%,100%{opacity:.35}50%{opacity:1}}
+    @keyframes scanA{0%{transform:translateX(-390px)}100%{transform:translateX(390px)}}
+    @keyframes scanB{0%{transform:translateX(-410px)}100%{transform:translateX(410px)}}
+    @keyframes core{to{transform:rotate(360deg)}}
     @media(prefers-reduced-motion:reduce){*{animation:none!important}}
     </style>
     <g clip-path="url(#studioClip)">
-    <ellipse cx="979" cy="130" rx="290" ry="210" fill="url(#aura)"/>
-    <g class="horizon" fill="none" stroke="#55C8FF" opacity=".18"><path d="M725 257L958 101"/><path d="M776 257L958 101"/><path d="M827 257L958 101"/><path d="M878 257L958 101"/><path d="M929 257L958 101"/><path d="M980 257L958 101"/><path d="M1031 257L958 101"/><path d="M1082 257L958 101"/><path d="M1133 257L958 101"/><path d="M1184 257L958 101"/><path d="M730 125h455"/><path d="M730 145h455"/><path d="M730 170h455"/><path d="M730 202h455"/><path d="M730 241h455"/><path d="M730 278h455"/></g>
-    <path d="M691 0L585 266" stroke="#55C8FF" opacity=".15"/>
-    <text x="40" y="37" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="2.8" text-anchor="start">INDEPENDENT GAME STUDIO</text>
-    <text x="36" y="114" fill="url(#ice)" font-family="Arial,Helvetica,sans-serif" font-size="66" font-weight="800" letter-spacing="2.5" text-anchor="start">ADDICTITY</text>
-    <text x="40" y="150" fill="#A9EAFF" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" letter-spacing="5.8" text-anchor="start">G A M E S</text>
-    <text x="40" y="190" fill="#D8F4FF" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" letter-spacing="0" text-anchor="start">Strong mechanics. Replayability. Identity.</text>
-    <text x="40" y="232" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start">ENTER THE STUDIO</text>
-    <path d="M194 228h51m-7-6 7 6-7 6" stroke="#55C8FF" stroke-width="1.7" fill="none"/>
-    <g class="gate">
-      <path d="M830 209L935 37l133 51-103 174z" fill="#02060B" stroke="#114266" stroke-width="1"/>
-      <path d="M849 201L940 54l107 42-90 149z" fill="url(#portal)" stroke="#55C8FF" stroke-opacity=".65"/>
-      <path d="M890 197L955 91l64 24-65 106z" fill="#02060B" stroke="#A9EAFF" stroke-opacity=".85"/>
-      <path class="spark" d="M849 201L940 54l107 42-90 149z" fill="none" stroke="#A9EAFF" stroke-width="2" stroke-dasharray="35 605"/>
-      <path d="M940 54l15 37M849 201l41-4m64 24 3 24m62-130 28-19" stroke="#008CFF" opacity=".65"/>
-      <path d="M935 37l5 17m25 208-8-17m111-157-21 8" stroke="#55C8FF" stroke-width="2"/>
-      <path d="M903 184l26-6 22-28-24 4-24 30z" fill="#55C8FF" opacity=".14"/>
+    <ellipse cx="120" cy="170" rx="250" ry="210" fill="url(#aura)"/>
+    <path d="M376 24v228M398 24v228" stroke="#55C8FF" opacity=".11"/>
+    <text x="42" y="62" fill="url(#ice)" font-family="Arial,Helvetica,sans-serif" font-size="48" font-weight="800" letter-spacing="2" text-anchor="start">ADDICTITY</text>
+    <text x="43" y="96" fill="#A9EAFF" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="400" letter-spacing="5" text-anchor="start">G A M E S</text>
+    <circle cx="126" cy="174" r="57" fill="#07111C" stroke="#55C8FF" stroke-opacity=".55"/>
+    <circle class="core" cx="126" cy="174" r="72" fill="none" stroke="#55C8FF" stroke-dasharray="58 18 6 31" opacity=".5"/>
+    <path d="M91 194l35-58 35 58-22-16-13 21-13-21-22 16zm22-34h26" fill="none" stroke="#A9EAFF" stroke-width="3" stroke-linejoin="round"/>
+    <text x="42" y="257" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="10" font-weight="400" letter-spacing="0.8" text-anchor="start">STRONG MECHANICS  /  REPLAYABILITY  /  IDENTITY</text>
+
+    <g>
+      <rect x="425" y="36" width="350" height="198" rx="14" fill="url(#projectA)" stroke="#55C8FF" stroke-opacity=".38"/>
+      <path d="M425 69h350M446 211h308" stroke="#55C8FF" opacity=".16"/>
+      <path class="scanA" d="M425 36h110l70 198H495z" fill="#55C8FF" opacity=".045"/>
+      <text x="447" y="61" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="10" font-weight="400" letter-spacing="1.8" text-anchor="start">PROJECT 01</text>
+      <text x="447" y="112" fill="#D8F4FF" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" letter-spacing="1.1" text-anchor="start">NO RESPITE</text>
+      <circle class="signal" cx="451" cy="148" r="4" fill="#FFC85C"/>
+      <text x="464" y="153" fill="#FFC85C" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="700" letter-spacing="1.3" text-anchor="start">IN DEVELOPMENT</text>
+      <text x="447" y="184" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="10" font-weight="400" letter-spacing="0.6" text-anchor="start">SURVIVAL  /  ENDLESS WAVE  /  ACTION</text>
+      <path d="M710 89l20 20-20 20-20-20zM710 98v22m-11-11h22" fill="none" stroke="#55C8FF" opacity=".75"/>
     </g>
-    <path d="M789 90l-15 8 14 8 14-8zM1090 174l-11 7 12 7 11-7z" fill="#55C8FF" opacity=".6"/>
-    <circle cx="745" cy="170" r="2" fill="#55C8FF"/><circle cx="1106" cy="73" r="2" fill="#55C8FF"/>
-    <text x="1153" y="37" fill="#A9EAFF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="12" font-weight="400" letter-spacing="0" text-anchor="end">addictitygames.com ↗</text>
-    <text x="1153" y="238" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="1.4" text-anchor="end">ONE MORE RUN.</text>
+    <g>
+      <rect x="797" y="36" width="361" height="198" rx="14" fill="url(#projectB)" stroke="#008CFF" stroke-opacity=".46"/>
+      <path d="M797 69h361M818 211h319" stroke="#008CFF" opacity=".18"/>
+      <path class="scanB" d="M797 36h110l70 198H867z" fill="#008CFF" opacity=".05"/>
+      <text x="819" y="61" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="10" font-weight="400" letter-spacing="1.8" text-anchor="start">PROJECT 02</text>
+      <text x="819" y="112" fill="#D8F4FF" font-family="Arial,Helvetica,sans-serif" font-size="28" font-weight="700" letter-spacing="1.1" text-anchor="start">GOBLET</text>
+      <circle class="signal" cx="823" cy="148" r="4" fill="#FFC85C"/>
+      <text x="836" y="153" fill="#FFC85C" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="700" letter-spacing="1.3" text-anchor="start">IN DEVELOPMENT</text>
+      <text x="819" y="184" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="10" font-weight="400" letter-spacing="0.6" text-anchor="start">GAME PROJECT  /  IN DEVELOPMENT</text>
+      <path d="M1086 91h37c0 22-7 34-18 38v13h14m-46 0h46m-33-51c0 22 7 34 19 38" fill="none" stroke="#A9EAFF" stroke-width="2" opacity=".8"/>
+    </g>
+    <text x="1158" y="258" fill="#A9EAFF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="0.5" text-anchor="end">addictitygames.com  ↗</text>
     </g></svg>

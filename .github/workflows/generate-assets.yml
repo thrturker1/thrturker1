@@ -6,7 +6,6 @@ on:
     paths:
       - "README.md"
       - "PROFILE-STATIC.md"
-      - "arsenal/**"
       - "assets/**"
       - "tools/**"
       - "requirements.txt"
@@ -16,7 +15,6 @@ on:
     paths:
       - "README.md"
       - "PROFILE-STATIC.md"
-      - "arsenal/**"
       - "assets/**"
       - "tools/**"
       - "requirements.txt"
@@ -50,4 +48,4 @@ jobs:
       - name: Verify committed output is current
         # SVG output is platform-independent. The terminal GIF is validated above,
         # but not byte-compared because font rasterization varies by operating system.
-        run: git diff --exit-code -- assets/*.svg arsenal/*.md tools/data/github-snapshot.json
+        run: git diff --exit-code -- assets/*.svg tools/data/github-snapshot.json

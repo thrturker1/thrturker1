@@ -1,38 +1,32 @@
 # Control Room — maintainer guide
 
-The profile is a compact sequence of locally generated artwork. `README.md` contains the linked images, technology navigation, and a collapsed text inventory; the repeated section headings, biography paragraphs, Verify/Create panel, and Agent Fabric panel are no longer displayed. `PROFILE-STATIC.md` provides a motion-free version.
+The public profile is one continuous control-room chassis. `README.md` places four generated modules directly against each other in this order: hero, terminal, automatic technology deck, and Addictity Games. Only the social buttons sit outside the chassis. Repeated headings, manual page indexes, GitHub telemetry, Verify/Create, and Agent Fabric are not displayed.
+
+`PROFILE-STATIC.md` keeps the same order with motion-free artwork.
 
 ## Source and output
 
 ```text
 README.md                    # primary animated profile
 PROFILE-STATIC.md            # motion-free profile
-arsenal/1.md … 7.md           # manually navigable technology pages
 assets/                      # generated, committed images
 tools/
-  design.py                  # canonical hero, technology deck, studio, social images
-  common.py                  # shared SVG primitives used by the stats generator
-  generate_terminal.py       # terminal GIF and static SVG/PNG
-  generate_stats.py          # validated public GitHub snapshot and stats strip
-  generate_all.py            # offline entry point for the current generators
+  design.py                  # chassis segments, technology deck, studio, social images
+  generate_terminal.py       # 1200 px terminal GIF and static SVG/PNG
+  generate_all.py            # offline entry point
   fetch_icons.py             # explicit upstream icon refresh; requires network
   icons/                     # vendored logos, licenses, sources.json checksums
-  data/github-snapshot.json # last verified public API snapshot
-.github/workflows/
-  generate-assets.yml        # reproducibility and asset checks
-  update-stats.yml           # scheduled public-data refresh
 ```
 
-`tools/generate_assets.py` and unused images remain in the repository as legacy material. They are not the canonical generators or displayed modules for the redesigned profile. Run `generate_all.py`, which invokes `design.py`, instead of the legacy generator.
-
-| Module | Current design |
+| Segment | Current design |
 | --- | --- |
-| Hero | 1200 × 350; identity and biography alternate in a 14-second loop. Static and reduced-motion versions are available. |
-| Technology deck | 1200 × 342; four columns and two rows. Blender, Godot, Unity, and .NET stay pinned in the top row; the lower four cards rotate through seven pages, six seconds per page. |
-| Addictity Games | 1200 × 266; an original animated gateway, with the whole image linking to the studio. |
-| Terminal | 1080 × 240; three compact scenes, 91 GIF frames, approximately 49 KiB in the current local render. Static SVG and PNG are also generated. |
-| GitHub stats | 1200 × 112; public repositories, owned source repositories, detected primary languages, followers, and a small snapshot date. |
-| Social links | Five separate icon images, each with its own clickable destination. |
+| Hero | 1200 × 350, rounded upper chassis edge; identity and biography alternate every 14 seconds. |
+| Terminal | 1200 × 240, placed directly below the hero with shared vertical rails. |
+| Technology deck | 1200 × 342, four columns and two rows. Blender, Godot, Unity, and .NET stay pinned; the lower row advances automatically every six seconds. The dots are status indicators, not links. |
+| Addictity Games | 1200 × 278, rounded lower chassis edge; No Respite and Goblet are shown as in-development projects. The whole segment links to the studio. |
+| Social links | Five compact, independently clickable icon images. |
+
+`tools/generate_stats.py`, its snapshot, and the scheduled refresh workflow remain as legacy telemetry tooling, but the generated stats strip is not referenced by either public profile document.
 
 ## Regenerate and validate
 
@@ -44,15 +38,15 @@ python tools/generate_all.py
 python tools/validate.py
 ```
 
-Normal generation is offline: it uses the committed icons and GitHub snapshot. The validator regenerates the output and checks deterministic generation, SVG/XML, GIF animation, local Markdown/image paths, required public links, workflows, and asset size limits. Inspect the generated images visually as well, including the static profile and every technology page.
+The validator regenerates output twice, checks determinism, SVG safety, terminal animation, the 4 × 2 technology grid, public links, README segment order, and workflow constraints. It also rejects any reintroduction of the removed manual index or GitHub telemetry panel.
 
-No fonts are bundled. SVG text uses system font fallbacks; the terminal generator rasterizes an available local font. Repeated generation is deterministic within the same environment, but GIF/PNG bytes and exact text rendering can differ between Windows and Linux because their fonts and rasterizers differ. The verification workflow therefore does not require a cross-platform byte match for raster images.
+No fonts are bundled. SVG text uses system font fallbacks; the terminal generator rasterizes an available local font. GIF and PNG bytes can vary between Windows and Linux because font rasterizers differ, so CI validates the raster animation without cross-platform byte comparison.
 
-## Technology logos and navigation
+## Technology logos
 
-Technology logos are embedded from `tools/icons`, not fetched by profile visitors. `sources.json` records pinned upstream URLs and SHA-256 checksums. Most marks come from Simple Icons 14.0.0 under CC0; the Devicon v2.16.0 marks use its MIT license. License files are retained alongside the SVGs. Gauge uses its official logo from the pinned `getgauge/gauge.org` commit `b20ecfe39a0b74ba3d75476d4eb2ef783d431a35`; its source is recorded separately in the manifest. AI concept icons are original artwork. Brand names and marks retain their respective owners' rights.
+Technology logos are embedded from `tools/icons`; profile visitors never fetch remote artwork. `sources.json` records pinned upstream URLs and SHA-256 checksums. Most marks come from Simple Icons 14.0.0 under CC0, Devicon v2.16.0 marks use its MIT license, and Gauge uses its official logo from the pinned `getgauge/gauge.org` commit recorded in the manifest. AI concept icons are original artwork.
 
-Refreshing upstream icons is an explicit maintenance operation that requires network access:
+Refreshing icons is an explicit network operation:
 
 ```bash
 python tools/fetch_icons.py
@@ -60,32 +54,10 @@ python tools/generate_all.py
 python tools/validate.py
 ```
 
-Review the changed SVGs, licenses, and checksum manifest before committing an upstream refresh. Normal regeneration never downloads logos.
+## Links and rendering
 
-GitHub Markdown cannot run the JavaScript or mutable inline state needed for a click-controlled carousel. The main image therefore advances automatically. The arrows and numbered links open real static pages in `arsenal/1.md` through `arsenal/7.md`, where previous/next links provide manual navigation. They do not change the current frame inside the README. Each page keeps the same pinned top row and four lower cards, and the complete text inventory is available in the collapsed section.
+Current destinations are [GitHub](https://github.com/thrturker1), [LinkedIn](https://www.linkedin.com/in/thrturker/), [Instagram](https://www.instagram.com/turkertahirr/), [Portfolio](https://sevro49.github.io/My-Portfolio/public/index.html), and [Addictity Games](https://addictitygames.com).
 
-## Public data and links
+GitHub README content cannot run JavaScript, so the technology deck uses a self-contained SVG animation instead of click-controlled state. Reduced-motion visitors receive the first static 4 × 2 page. All artwork is self-contained: no scripts, remote stylesheets, remote fonts, or runtime image dependencies.
 
-Refresh the public GitHub data explicitly with:
-
-```bash
-python tools/generate_stats.py
-```
-
-Or rebuild only the stats strip from its committed snapshot:
-
-```bash
-python tools/generate_stats.py --offline
-```
-
-The refresh validates the account identity, integer counts, repository ownership, visibility, fork state, and primary-language fields. It paginates the repository listing and rejects incomplete, duplicate, or inconsistent results. Cached data is also validated before rendering. A failed request or invalid payload keeps the previous verified snapshot and its original date; missing values are never silently turned into zero. Successful snapshot writes are atomic. The SVG description records the API source and the meaning of the counts.
-
-The stats are a dated public snapshot, not a live contribution feed. Source repositories exclude forks; primary languages count distinct non-null main languages in those source repositories. No streak, contribution, private-repository, or proficiency count is inferred. The scheduled workflow uses `GITHUB_TOKEN` for API access and commits changed snapshot/output files when enabled in GitHub Actions.
-
-Current destinations are [GitHub](https://github.com/thrturker1), [LinkedIn](https://www.linkedin.com/in/thrturker/), [Instagram](https://www.instagram.com/turkertahirr/), [Portfolio](https://sevro49.github.io/My-Portfolio/public/index.html), and [Addictity Games](https://addictitygames.com). The studio panel uses the studio identity and public description; recheck the live studio site before adding release dates, platforms, or current game status. A stored URL or successful local render does not establish the destination's current availability.
-
-## Animation and GitHub rendering
-
-The images have self-contained dark backgrounds and no scripts, remote stylesheets, remote fonts, or runtime image dependencies. Animated modules have static fallbacks; `README.md` uses reduced-motion image sources, and `PROFILE-STATIC.md` gives an explicit motion-free route regardless of browser preference handling. Descriptive alternative text preserves the identity, tool names, and link purposes.
-
-Local browser previews can verify SVG image animation, GIF playback, layout, and links. They cannot establish how GitHub's sanitizer, image proxy, cache, or a particular browser will render the published README. Inspect the profile on GitHub after publication, including reduced-motion behavior and manual technology navigation. This revision was prepared locally; it has not been pushed or deployed. Running the generators and validator does not publish it.
+Local browser previews can verify the seamless layout, SVG/GIF playback, mobile width, and fallbacks. They cannot reproduce every GitHub image-proxy or sanitizer behavior. This revision is local until explicitly committed and pushed.

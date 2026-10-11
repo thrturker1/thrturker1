@@ -29,15 +29,13 @@ const fileURL = rel => pathToFileURL(path.join(root,rel)).href;
   await page.screenshot({path:path.join(out,'profile-mobile.png'),fullPage:true});
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);
   if(overflow)throw Error('Mobile horizontal overflow');
-  await page.locator('summary').click();
-  if(!await page.locator('details').evaluate(e=>e.open))throw Error('Native details failed');
   await page.emulateMedia({colorScheme:'dark',reducedMotion:'no-preference'});
   const scenes=[['hero.svg',350,2000,'hero-identity'],['hero.svg',350,8500,'hero-about'],
     ['stack.svg',342,2000,'stack-1'],['stack.svg',342,8000,'stack-2'],['stack.svg',342,38000,'stack-7'],
-    ['studio.svg',266,2000,'studio'],['terminal-static.svg',240,0,'terminal'],['github-stats.svg',112,0,'stats']];
+    ['studio.svg',278,2000,'studio'],['terminal-static.svg',240,0,'terminal']];
   const bounds=[];
   for(const [file,height,time,name] of scenes){
-    const width=file.startsWith('terminal')?1080:1200;
+    const width=1200;
     await page.setViewportSize({width,height});
     await page.goto(fileURL('assets/'+file));
     await page.evaluate(t=>{for(const a of document.getAnimations()){a.pause();a.currentTime=t}},time);

@@ -66,8 +66,25 @@ def defs():
     </defs>'''
 
 
-def shell(height):
-    return f'<rect x=".5" y=".5" width="1199" height="{height-1}" rx="18" fill="{BG}" stroke="url(#edge)"/><rect x="1" y="1" width="1198" height="{height-2}" rx="17" fill="url(#dots)"/>'
+def shell(height, segment="solo"):
+    """Draw one part of the continuous control-room chassis.
+
+    The main profile uses top/middle/bottom segments so separate GitHub images
+    visually lock together without repeating rounded cards or horizontal rails.
+    """
+    if segment == "top":
+        fill = f'<path d="M0 {height}V18Q0 0 18 0H1182Q1200 0 1200 18V{height}Z" fill="{BG}"/><path d="M1 {height}V18Q1 1 18 1H1182Q1199 1 1199 18V{height}" fill="none" stroke="url(#edge)"/>'
+        texture = f'<path d="M1 {height}V18Q1 1 18 1H1182Q1199 1 1199 18V{height}Z" fill="url(#dots)"/>'
+    elif segment == "middle":
+        fill = f'<rect width="1200" height="{height}" fill="{BG}"/><path d="M.5 0V{height}M1199.5 0V{height}" stroke="url(#edge)"/>'
+        texture = f'<rect x="1" width="1198" height="{height}" fill="url(#dots)"/>'
+    elif segment == "bottom":
+        fill = f'<path d="M0 0V{height-18}Q0 {height} 18 {height}H1182Q1200 {height} 1200 {height-18}V0Z" fill="{BG}"/><path d="M.5 0V{height-18}Q.5 {height-.5} 18 {height-.5}H1182Q1199.5 {height-.5} 1199.5 {height-18}V0" fill="none" stroke="url(#edge)"/>'
+        texture = f'<path d="M1 0V{height-18}Q1 {height-1} 18 {height-1}H1182Q1199 {height-1} 1199 {height-18}V0Z" fill="url(#dots)"/>'
+    else:
+        fill = f'<rect x=".5" y=".5" width="1199" height="{height-1}" rx="18" fill="{BG}" stroke="url(#edge)"/>'
+        texture = f'<rect x="1" y="1" width="1198" height="{height-2}" rx="17" fill="url(#dots)"/>'
+    return fill + texture
 
 
 def glyph(kind, color):
@@ -118,7 +135,7 @@ def static_copy(name, target):
 def hero():
     noise = ''.join(f'<path d="M{x} {y}h{w}" stroke="{CYAN}" opacity=".3"/>' for x, y, w in
                     [(random.Random(i+91).randint(34, 1160), random.Random(i+301).randint(60, 310), 3+i%7) for i in range(18)])
-    body = defs() + shell(350) + f'''
+    body = defs() + shell(350, "top") + f'''
     <style>
     .identity{{animation:identity 14s infinite}} .about{{animation:about 14s infinite}}
     .orbit{{transform-origin:985px 173px;animation:orbit 24s linear infinite}}
@@ -209,7 +226,7 @@ def stack():
         start,end=100*i/count,100*(i+1)/count
         dot_rules.append(f'@keyframes d{i}{{0%,100%{{opacity:.2}}{max(.001,start):.5f}%,{end-.001:.5f}%{{opacity:1}}}}')
         dots.append(f'<rect class="d{i}" x="{531+i*22}" y="319" width="14" height="3" rx="1.5" fill="{CYAN}" opacity="{1 if i==0 else .2}"/>')
-    body = defs()+shell(342)+f'''
+    body = defs()+shell(342, "middle")+f'''
     <style>.track{{animation:deck {count*6}s cubic-bezier(.45,0,.2,1) infinite}}
     @keyframes deck{{{''.join(rules)}}}
     {''.join(f'.d{i}{{animation:d{i} {count*6}s steps(1,end) infinite}}' for i in range(count))}{''.join(dot_rules)}
@@ -225,56 +242,65 @@ def stack():
     {t(1158,326,'AUTO · 6 SEC',9,MUTED,spacing=1.2,anchor='end')}
     '''
     all_names = ', '.join(item[0] for page in PAGES for item in page)
-    write("stack.svg",body,342,"Technology deck", "Four columns and two rows. Pinned: Blender, Godot Engine, Unity and .NET. The second row cycles through seven pages: "+all_names+". Use the numbered links beneath for static pages.")
+    write("stack.svg",body,342,"Technology deck", "Four columns and two rows. Pinned: Blender, Godot Engine, Unity and .NET. The second row automatically cycles through seven pages: "+all_names+".")
     for i,page in enumerate(PAGES):
-        b=defs()+shell(342)+fixed+''.join(tech_card(item,j,186) for j,item in enumerate(page))
+        b=defs()+shell(342, "middle")+fixed+''.join(tech_card(item,j,186) for j,item in enumerate(page))
         b+=t(40,31,'THE TOOLKIT',12,CYAN,spacing=2.2)+t(1158,31,f'{i+1:02} / {count:02}',12,MUTED,spacing=2,anchor='end')
         b+=t(600,325,' · '.join(item[3] for item in page),10,MUTED,spacing=1,anchor='middle')
         write(f"stack-page-{i+1}.svg",b,342,f"Technology page {i+1} of {count}","Featured: Blender, Godot Engine, Unity, .NET. "+', '.join(item[0] for item in page))
 
 
 def studio():
-    floor=[]
-    for i in range(10):
-        floor.append(f'<path d="M{725+i*51} 257L958 101"/>')
-    for yy in (125,145,170,202,241,278):
-        floor.append(f'<path d="M730 {yy}h455"/>')
-    body=defs()+shell(266)+f'''
-    <defs><clipPath id="studioClip"><rect x="1" y="1" width="1198" height="264" rx="17"/></clipPath>
-      <linearGradient id="portal" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#07111C"/><stop offset=".58" stop-color="#008CFF" stop-opacity=".08"/><stop offset="1" stop-color="#A9EAFF" stop-opacity=".5"/></linearGradient></defs>
+    body=defs()+shell(278, "bottom")+f'''
+    <defs>
+      <linearGradient id="projectA" x1="0" x2="1"><stop stop-color="#0B1722"/><stop offset="1" stop-color="#102436"/></linearGradient>
+      <linearGradient id="projectB" x1="0" x2="1"><stop stop-color="#0B1722"/><stop offset="1" stop-color="#181B35"/></linearGradient>
+      <clipPath id="studioClip"><path d="M1 0V260Q1 277 18 277H1182Q1199 277 1199 260V0Z"/></clipPath>
+    </defs>
     <style>
-    .gate{{animation:gate 6s ease-in-out infinite}} .spark{{animation:spark 6s ease-in-out infinite}}
-    .horizon{{animation:horizon 7s ease-in-out infinite}}
-    @keyframes gate{{0%,100%{{transform:translateY(0)}}50%{{transform:translateY(-7px)}}}}
-    @keyframes spark{{0%{{stroke-dashoffset:640}}100%{{stroke-dashoffset:0}}}}
-    @keyframes horizon{{0%,100%{{opacity:.15}}50%{{opacity:.35}}}}
+    .signal{{animation:signal 4.8s ease-in-out infinite}} .scanA{{animation:scanA 5.4s linear infinite}}
+    .scanB{{animation:scanB 6.2s linear infinite}} .core{{transform-origin:126px 174px;animation:core 18s linear infinite}}
+    @keyframes signal{{0%,100%{{opacity:.35}}50%{{opacity:1}}}}
+    @keyframes scanA{{0%{{transform:translateX(-390px)}}100%{{transform:translateX(390px)}}}}
+    @keyframes scanB{{0%{{transform:translateX(-410px)}}100%{{transform:translateX(410px)}}}}
+    @keyframes core{{to{{transform:rotate(360deg)}}}}
     @media(prefers-reduced-motion:reduce){{*{{animation:none!important}}}}
     </style>
     <g clip-path="url(#studioClip)">
-    <ellipse cx="979" cy="130" rx="290" ry="210" fill="url(#aura)"/>
-    <g class="horizon" fill="none" stroke="{CYAN}" opacity=".18">{''.join(floor)}</g>
-    <path d="M691 0L585 266" stroke="{CYAN}" opacity=".15"/>
-    {t(40,37,'INDEPENDENT GAME STUDIO',11,CYAN,spacing=2.8)}
-    {t(36,114,'ADDICTITY',66,'url(#ice)',800,2.5,sans=True)}
-    {t(40,150,'G A M E S',24,HIGHLIGHT,400,5.8,sans=True)}
-    {t(40,190,'Strong mechanics. Replayability. Identity.',17,TEXT,sans=True)}
-    {t(40,232,'ENTER THE STUDIO',12,CYAN,spacing=1.5)}
-    <path d="M194 228h51m-7-6 7 6-7 6" stroke="{CYAN}" stroke-width="1.7" fill="none"/>
-    <g class="gate">
-      <path d="M830 209L935 37l133 51-103 174z" fill="{BG}" stroke="#114266" stroke-width="1"/>
-      <path d="M849 201L940 54l107 42-90 149z" fill="url(#portal)" stroke="{CYAN}" stroke-opacity=".65"/>
-      <path d="M890 197L955 91l64 24-65 106z" fill="{BG}" stroke="{HIGHLIGHT}" stroke-opacity=".85"/>
-      <path class="spark" d="M849 201L940 54l107 42-90 149z" fill="none" stroke="{HIGHLIGHT}" stroke-width="2" stroke-dasharray="35 605"/>
-      <path d="M940 54l15 37M849 201l41-4m64 24 3 24m62-130 28-19" stroke="{BLUE}" opacity=".65"/>
-      <path d="M935 37l5 17m25 208-8-17m111-157-21 8" stroke="{CYAN}" stroke-width="2"/>
-      <path d="M903 184l26-6 22-28-24 4-24 30z" fill="{CYAN}" opacity=".14"/>
+    <ellipse cx="120" cy="170" rx="250" ry="210" fill="url(#aura)"/>
+    <path d="M376 24v228M398 24v228" stroke="{CYAN}" opacity=".11"/>
+    {t(42,62,'ADDICTITY',48,'url(#ice)',800,2,sans=True)}
+    {t(43,96,'G A M E S',19,HIGHLIGHT,400,5,sans=True)}
+    <circle cx="126" cy="174" r="57" fill="{SURFACE}" stroke="{CYAN}" stroke-opacity=".55"/>
+    <circle class="core" cx="126" cy="174" r="72" fill="none" stroke="{CYAN}" stroke-dasharray="58 18 6 31" opacity=".5"/>
+    <path d="M91 194l35-58 35 58-22-16-13 21-13-21-22 16zm22-34h26" fill="none" stroke="{HIGHLIGHT}" stroke-width="3" stroke-linejoin="round"/>
+    {t(42,257,'STRONG MECHANICS  /  REPLAYABILITY  /  IDENTITY',10,MUTED,spacing=.8)}
+
+    <g>
+      <rect x="425" y="36" width="350" height="198" rx="14" fill="url(#projectA)" stroke="{CYAN}" stroke-opacity=".38"/>
+      <path d="M425 69h350M446 211h308" stroke="{CYAN}" opacity=".16"/>
+      <path class="scanA" d="M425 36h110l70 198H495z" fill="{CYAN}" opacity=".045"/>
+      {t(447,61,'PROJECT 01',10,MUTED,spacing=1.8)}
+      {t(447,112,'NO RESPITE',28,TEXT,700,1.1,sans=True)}
+      <circle class="signal" cx="451" cy="148" r="4" fill="#FFC85C"/>
+      {t(464,153,'IN DEVELOPMENT',11,'#FFC85C',700,spacing=1.3)}
+      {t(447,184,'SURVIVAL  /  ENDLESS WAVE  /  ACTION',10,MUTED,spacing=.6)}
+      <path d="M710 89l20 20-20 20-20-20zM710 98v22m-11-11h22" fill="none" stroke="{CYAN}" opacity=".75"/>
     </g>
-    <path d="M789 90l-15 8 14 8 14-8zM1090 174l-11 7 12 7 11-7z" fill="{CYAN}" opacity=".6"/>
-    <circle cx="745" cy="170" r="2" fill="{CYAN}"/><circle cx="1106" cy="73" r="2" fill="{CYAN}"/>
-    {t(1153,37,'addictitygames.com ↗',12,HIGHLIGHT,anchor='end')}
-    {t(1153,238,'ONE MORE RUN.',11,MUTED,spacing=1.4,anchor='end')}
+    <g>
+      <rect x="797" y="36" width="361" height="198" rx="14" fill="url(#projectB)" stroke="{BLUE}" stroke-opacity=".46"/>
+      <path d="M797 69h361M818 211h319" stroke="{BLUE}" opacity=".18"/>
+      <path class="scanB" d="M797 36h110l70 198H867z" fill="{BLUE}" opacity=".05"/>
+      {t(819,61,'PROJECT 02',10,MUTED,spacing=1.8)}
+      {t(819,112,'GOBLET',28,TEXT,700,1.1,sans=True)}
+      <circle class="signal" cx="823" cy="148" r="4" fill="#FFC85C"/>
+      {t(836,153,'IN DEVELOPMENT',11,'#FFC85C',700,spacing=1.3)}
+      {t(819,184,'GAME PROJECT  /  IN DEVELOPMENT',10,MUTED,spacing=.6)}
+      <path d="M1086 91h37c0 22-7 34-18 38v13h14m-46 0h46m-33-51c0 22 7 34 19 38" fill="none" stroke="{HIGHLIGHT}" stroke-width="2" opacity=".8"/>
+    </g>
+    {t(1158,258,'addictitygames.com  ↗',11,HIGHLIGHT,spacing=.5,anchor='end')}
     </g>'''
-    write("studio.svg",body,266,"Addictity Games — enter the studio","Independent game studio. Strong mechanics. Replayability. Identity. An original animated dimensional gateway; click to visit addictitygames.com.")
+    write("studio.svg",body,278,"Addictity Games — games in development","Addictity Games. No Respite and Goblet are in development. Click to visit addictitygames.com.")
     static_copy("studio.svg","studio-static.svg")
 
 
@@ -284,25 +310,6 @@ def contacts():
         body+=logo(slug,16,12,20,HIGHLIGHT)+t(47,28,label,14,TEXT,sans=True)
         body+='<path d="M159 16h8v8m-8 0 8-8" stroke="#7299B4" fill="none"/>'
         write(f"social-{slug}.svg",body,44,label,f"Open {label}",width=184)
-    for name,d in [("prev","M30 12l-7 7 7 7M23 19h18"),("next","M35 12l7 7-7 7M24 19h18")]:
-        body=f'<rect x=".5" y=".5" width="63" height="37" rx="7" fill="{SURFACE}" stroke="#22435A"/><path d="{d}" fill="none" stroke="{CYAN}" stroke-width="1.5"/>'
-        write(f"nav-{name}.svg",body,38,'Previous page' if name=='prev' else 'Next page','Technology inventory navigation',width=64)
-
-
-def manual_pages():
-    directory=ROOT/"arsenal"
-    directory.mkdir(exist_ok=True)
-    total=len(PAGES)
-    for i,page in enumerate(PAGES,1):
-        previous=total if i==1 else i-1
-        following=1 if i==total else i+1
-        names=', '.join(item[0] for item in page)
-        nav=' · '.join(f'<strong>{n:02}</strong>' if n==i else f'<a href="{n}.md">{n:02}</a>' for n in range(1,total+1))
-        (directory/f"{i}.md").write_text(
-            f'[← Profile](../README.md)\n\n![Blender, Godot Engine, Unity, .NET; {names}](../assets/stack-page-{i}.svg)\n\n'
-            f'<p align="center">\n  <a href="{previous}.md"><img src="../assets/nav-prev.svg" width="48" alt="Previous page"></a>\n'
-            f'  &nbsp; {nav} &nbsp;\n'
-            f'  <a href="{following}.md"><img src="../assets/nav-next.svg" width="48" alt="Next page"></a>\n</p>\n',encoding='utf-8',newline='\n')
 
 
 def main():
@@ -310,8 +317,7 @@ def main():
     stack()
     studio()
     contacts()
-    manual_pages()
-    print('Generated compact hero, 4x2 technology deck, seven manual pages, studio and linked social icons.')
+    print('Generated one continuous hero/terminal/deck/studio chassis, automatic 4x2 technology deck and linked social icons.')
 
 
 if __name__ == '__main__':

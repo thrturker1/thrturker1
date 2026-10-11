@@ -1,18 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="240" viewBox="0 0 1080 240" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img">
 <title>Tahir — Addictity Games terminal</title>
 <desc>The terminal launches Addictity Games. Studio website: https://addictitygames.com</desc>
-<rect x="1" y="1" width="1078" height="238" rx="16" fill="#050B13" stroke="#194050"/>
-<path d="M17 2H1063Q1078 2 1078 17V42H2V17Q2 2 17 2Z" fill="#091621"/>
-<path d="M22 43H1057M30 202H1050" stroke="#143443"/>
+<rect width="1200" height="240" fill="#050B13"/>
+<path d="M.5 0V240M1199.5 0V240" stroke="#194050"/>
+<path d="M1 0H1199V42H1Z" fill="#091621"/>
+<path d="M22 43H1177M30 202H1170" stroke="#143443"/>
 <circle cx="31" cy="22" r="3" fill="#286173"/><circle cx="49" cy="22" r="3" fill="#398C98"/><circle cx="67" cy="22" r="3" fill="#67DCED"/>
 <g font-family="Consolas,DejaVu Sans Mono,monospace">
 <text x="88" y="26" font-size="13" fill="#7898AA">TAHIR / LIVE SHELL</text>
-<text x="922" y="26" font-size="13" fill="#7898AA">SESSION 03 / 03</text>
+<text x="1042" y="26" font-size="13" fill="#7898AA">SESSION 03 / 03</text>
 <text x="30" y="80" font-size="21" fill="#E3F5F8" xml:space="preserve"><tspan fill="#7898AA">tahir@controlroom:~$ </tspan><tspan font-weight="700">launch addictity-games</tspan><tspan fill="#67DCED"> ▌</tspan></text>
 <text x="30" y="122" fill="#62E5AF" font-size="21" xml:space="preserve">[ONLINE] ADDICTITY GAMES</text><text x="30" y="154" fill="#67DCED" font-size="21" xml:space="preserve">         https://addictitygames.com</text>
 <text x="45" y="222" font-size="13" fill="#7898AA">READY</text>
 </g>
 <circle cx="32.5" cy="219.5" r="2.5" fill="#62E5AF"/>
-<path d="M943 218H968M979 218H1004" stroke="#183746" stroke-width="3" stroke-linecap="round"/>
-<path d="M1015 218H1040" stroke="#67DCED" stroke-width="3" stroke-linecap="round"/>
+<path d="M1063 218H1088M1099 218H1124" stroke="#183746" stroke-width="3" stroke-linecap="round"/>
+<path d="M1135 218H1160" stroke="#67DCED" stroke-width="3" stroke-linecap="round"/>
 </svg>

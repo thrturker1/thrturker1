@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 from common import ASSETS
 
 
-WIDTH, HEIGHT = 1080, 240
+WIDTH, HEIGHT = 1200, 240
 BG, SURFACE = "#050B13", "#091621"
 CYAN, TEXT, MUTED, GREEN = "#67DCED", "#E3F5F8", "#7898AA", "#62E5AF"
 PROMPT = "tahir@controlroom:~$ "
@@ -62,9 +62,10 @@ SCENES = [
 def render(scene_index: int, command: str, shown_lines: int, cursor: bool = True) -> Image.Image:
     image = Image.new("RGB", (WIDTH, HEIGHT), BG)
     draw = ImageDraw.Draw(image)
-    draw.rounded_rectangle((1, 1, WIDTH - 2, HEIGHT - 2), radius=16, fill=BG, outline="#194050")
-    draw.rounded_rectangle((2, 2, WIDTH - 3, 42), radius=15, fill=SURFACE)
-    draw.rectangle((2, 24, WIDTH - 3, 42), fill=SURFACE)
+    # Middle segment of the profile chassis: vertical rails only, no card gap.
+    draw.line((0, 0, 0, HEIGHT), fill="#194050")
+    draw.line((WIDTH - 1, 0, WIDTH - 1, HEIGHT), fill="#194050")
+    draw.rectangle((1, 0, WIDTH - 2, 42), fill=SURFACE)
     draw.line((22, 43, WIDTH - 23, 43), fill="#143443")
     for x, color in ((31, "#286173"), (49, "#398C98"), (67, CYAN)):
         draw.ellipse((x - 3, 19, x + 3, 25), fill=color)
@@ -122,7 +123,10 @@ def build_frames() -> tuple[list[Image.Image], list[int]]:
 def write_static() -> None:
     scene_index = len(SCENES) - 1
     command, output = SCENES[scene_index]
-    render(scene_index, command, len(output)).save(ASSETS / "terminal-static.png", optimize=True)
+    png_target = ASSETS / "terminal-static.png"
+    png_temporary = ASSETS / "terminal-static.tmp.png"
+    render(scene_index, command, len(output)).save(png_temporary, optimize=True)
+    png_temporary.replace(png_target)
     font = 'font-family="Consolas,DejaVu Sans Mono,monospace"'
     output_lines = "".join(
         f'<text x="30" y="{122 + index * LINE_HEIGHT}" fill="{color}" font-size="21" xml:space="preserve">{escape(value)}</text>'
@@ -131,20 +135,21 @@ def write_static() -> None:
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img">
 <title>Tahir — Addictity Games terminal</title>
 <desc>The terminal launches Addictity Games. Studio website: https://addictitygames.com</desc>
-<rect x="1" y="1" width="1078" height="238" rx="16" fill="{BG}" stroke="#194050"/>
-<path d="M17 2H1063Q1078 2 1078 17V42H2V17Q2 2 17 2Z" fill="{SURFACE}"/>
-<path d="M22 43H1057M30 202H1050" stroke="#143443"/>
+<rect width="{WIDTH}" height="{HEIGHT}" fill="{BG}"/>
+<path d="M.5 0V{HEIGHT}M{WIDTH-.5} 0V{HEIGHT}" stroke="#194050"/>
+<path d="M1 0H{WIDTH-1}V42H1Z" fill="{SURFACE}"/>
+<path d="M22 43H{WIDTH-23}M30 202H{WIDTH-30}" stroke="#143443"/>
 <circle cx="31" cy="22" r="3" fill="#286173"/><circle cx="49" cy="22" r="3" fill="#398C98"/><circle cx="67" cy="22" r="3" fill="{CYAN}"/>
 <g {font}>
 <text x="88" y="26" font-size="13" fill="{MUTED}">TAHIR / LIVE SHELL</text>
-<text x="922" y="26" font-size="13" fill="{MUTED}">SESSION 03 / 03</text>
+<text x="{WIDTH-158}" y="26" font-size="13" fill="{MUTED}">SESSION 03 / 03</text>
 <text x="30" y="80" font-size="21" fill="{TEXT}" xml:space="preserve"><tspan fill="{MUTED}">{escape(PROMPT)}</tspan><tspan font-weight="700">{escape(command)}</tspan><tspan fill="{CYAN}"> ▌</tspan></text>
 {output_lines}
 <text x="45" y="222" font-size="13" fill="{MUTED}">READY</text>
 </g>
 <circle cx="32.5" cy="219.5" r="2.5" fill="{GREEN}"/>
-<path d="M943 218H968M979 218H1004" stroke="#183746" stroke-width="3" stroke-linecap="round"/>
-<path d="M1015 218H1040" stroke="{CYAN}" stroke-width="3" stroke-linecap="round"/>
+<path d="M{WIDTH-137} 218H{WIDTH-112}M{WIDTH-101} 218H{WIDTH-76}" stroke="#183746" stroke-width="3" stroke-linecap="round"/>
+<path d="M{WIDTH-65} 218H{WIDTH-40}" stroke="{CYAN}" stroke-width="3" stroke-linecap="round"/>
 </svg>
 '''
     (ASSETS / "terminal-static.svg").write_text(svg, encoding="utf-8", newline="\n")

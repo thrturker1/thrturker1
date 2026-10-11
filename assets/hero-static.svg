@@ -5,7 +5,7 @@
       <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" /></filter>
       <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#7299B4" opacity=".19" /></pattern>
       <pattern id="scan" width="3" height="5" patternUnits="userSpaceOnUse"><path d="M0 0H3" stroke="#55C8FF" opacity=".018" /></pattern>
-    </defs><rect x=".5" y=".5" width="1199" height="349" rx="18" fill="#02060B" stroke="url(#edge)" /><rect x="1" y="1" width="1198" height="348" rx="17" fill="url(#dots)" />
+    </defs><path d="M0 350V18Q0 0 18 0H1182Q1200 0 1200 18V350Z" fill="#02060B" /><path d="M1 350V18Q1 1 18 1H1182Q1199 1 1199 18V350" fill="none" stroke="url(#edge)" /><path d="M1 350V18Q1 1 18 1H1182Q1199 1 1199 18V350Z" fill="url(#dots)" />
     <ellipse cx="990" cy="175" rx="230" ry="200" fill="url(#aura)" />
     <path d="M36 59H760M36 295H762" stroke="#55C8FF" opacity=".12" />
     <text x="40" y="37" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="13" font-weight="400" letter-spacing="2.8" text-anchor="start">TAHIR / CONTROL ROOM</text>
