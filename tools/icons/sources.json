@@ -1,0 +1,114 @@
+{
+  "apachejmeter": {
+    "sha256": "fe08f8745af3bd4775d8084c1dc2abcd62af7fb2f9728129ec338d5b1f63a52d",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/apachejmeter.svg"
+  },
+  "apachekafka": {
+    "sha256": "659f015de2ae3aebdf75cf8b16ecff44026fee6031a4e98bc8102a19eef34c26",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/apachekafka.svg"
+  },
+  "blender": {
+    "sha256": "ec86e2c9cf9fc25f5c8d3bf2e8d201c0dce6683137f37a1e61f992da6566bff5",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/blender.svg"
+  },
+  "csharp": {
+    "sha256": "ccb93dc80b4fbd7363158d520c948ba798f843eb77ece519d06ae1b92058a8b3",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/csharp/csharp-plain.svg"
+  },
+  "docker": {
+    "sha256": "65571291c261ef869c31540a38f3ca0f0ee3bb73f179c172211c8860f19a6359",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/docker.svg"
+  },
+  "dotnet": {
+    "sha256": "3b7e1243fb2389116b0a5237c9f07e82f6d2eb18ee40bd232f28abccd7956993",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/dotnet.svg"
+  },
+  "electron": {
+    "sha256": "fdf1b8ce32ada155bd490c9da008974af47fa808177e219d449d1d091f0f1d4e",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/electron.svg"
+  },
+  "gauge": {
+    "sha256": "acadbf137323948ef86b57172463794eb266ad27a8fbf08e3e01e6778f335363",
+    "url": "https://raw.githubusercontent.com/getgauge/gauge.org/b20ecfe39a0b74ba3d75476d4eb2ef783d431a35/source/assets/images/gauge-logo_white.svg"
+  },
+  "github": {
+    "sha256": "3bf8cceead820aec50d4ee825a3fd02c5a1cd6665cc9cf4cbf3d9c8861a204bb",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/github.svg"
+  },
+  "godotengine": {
+    "sha256": "95757647fedf1440fd24cc32a00f592ead4b050f8a63fdfcc46fbcd3a2952ffb",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/godotengine.svg"
+  },
+  "instagram": {
+    "sha256": "f53af2d1fc5292ba1433b5c1faf50005ce6a997fa302d1816989929f379a59dc",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/instagram.svg"
+  },
+  "java": {
+    "sha256": "7b05ebcc538e747d077ed3c3a2491122923d3ec755cccacb670be9372e4bbbc5",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/java/java-plain.svg"
+  },
+  "javascript": {
+    "sha256": "c9be35a7a861ebe80ae4ee706d05004b99ee59fc63db69da6dcc10776718434b",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/javascript.svg"
+  },
+  "k6": {
+    "sha256": "ce58ac3956ced5d2da8ded8d7f3e13d43e7e4c335926db7d4729cf80f2857dc2",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/k6.svg"
+  },
+  "kubernetes": {
+    "sha256": "ceee2f4e87fa1533600672190c156194039f744fa9b5da10e83f002178e84b47",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/kubernetes.svg"
+  },
+  "linkedin": {
+    "sha256": "22243cb8b9422f24448fd0190b6438a3e7b30d30f54d95f06f25e142c03c5da9",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/linkedin/linkedin-plain.svg"
+  },
+  "nextdotjs": {
+    "sha256": "593e14da3ddb65be4c8fa6a178f2f48a01a8bd39ea384f679cd7182b520da502",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/nextdotjs.svg"
+  },
+  "nodedotjs": {
+    "sha256": "021851b758cde7d3e04819c3ac02047d0ff281c712e8387afa0c76a6dac6db6c",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/nodedotjs.svg"
+  },
+  "playwright": {
+    "sha256": "c829ee41780a2c9748b9aeeeec530dc9ceeade68687e252ff7f044c16a8c384b",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/v2.16.0/icons/playwright/playwright-original.svg"
+  },
+  "postman": {
+    "sha256": "ffa713180d8a0dc42d69fb219fda548293b25438288b6abc5ccb4e381463778f",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/postman.svg"
+  },
+  "react": {
+    "sha256": "ab9136a1a4a8be72ac6743e1bdd1912d878bd68d57787ea7a6c6838e3b23c01c",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/react.svg"
+  },
+  "selenium": {
+    "sha256": "6d90c907424762e335d06b878087e8db84cbd8a4dbd48c627f877cae63f605a0",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/selenium.svg"
+  },
+  "spring": {
+    "sha256": "44f55b1c7e9db0fab5bbb9b91247844986a39995b6eadf0aa3ca6edf47c1097e",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/spring.svg"
+  },
+  "tailwindcss": {
+    "sha256": "5d4ede3c95da824f543c6eefbe7c78b45ecce6796f6633de196dd712a7841140",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/tailwindcss.svg"
+  },
+  "tauri": {
+    "sha256": "5a3823fee5840f153d2e7fa55b07d0ee568e650e9339a3ca6b8464aabb3964b7",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/tauri.svg"
+  },
+  "typescript": {
+    "sha256": "7f023e8d1e767370306ec9437d2de5d5af97491d6208dd7799a3808a7c10a36a",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/typescript.svg"
+  },
+  "unity": {
+    "sha256": "b5b66fda997db7445483ff2917b1c17abb8da607d43905835551991aeb940753",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/unity.svg"
+  },
+  "vuedotjs": {
+    "sha256": "2a57b59bd3ff2880f971f7f6cce2378d20bdfb1a54150a0a7ca9fd2fe1bfa781",
+    "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.0.0/icons/vuedotjs.svg"
+  }
+}

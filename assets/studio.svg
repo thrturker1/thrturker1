@@ -1,53 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img">
-<title>Studio</title>
-<desc>Cyber-terminal control room interface for Tahir.</desc>
-
-<defs>
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-  <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-    <feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-  <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
-    <path d="M0 3.5H4" stroke="#55C8FF" stroke-opacity=".035"/>
-  </pattern>
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M40 0H0V40" fill="none" stroke="#55C8FF" stroke-opacity=".045"/>
-  </pattern>
-</defs>
-<rect width="1200" height="420" rx="18" fill="#02060B"/>
-<rect x="1" y="1" width="1198" height="418" rx="17" fill="none" stroke="#55C8FF" stroke-opacity=".34"/>
-<path d="M22 1h92l12 12h150M1178 1h-74l-12 12h-102" fill="none" stroke="#55C8FF" stroke-opacity=".6"/>
-<rect width="1200" height="420" rx="18" fill="url(#grid)"/>
-<rect width="1200" height="420" rx="18" fill="url(#scan)"/>
-<text x="24" y="30" fill="#7299B4" font-family="ui-monospace,Consolas,monospace" font-size="11" letter-spacing="2">CR://STUDIO_LINK / ADDICTITY_GAMES</text>
-<circle cx="1170" cy="25" r="4" fill="#65F7B2"/>
-
-<style>.wave{animation:wave 5s ease-in-out infinite} @keyframes wave{50%{transform:translateX(22px)}} @media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
-
-<text x="32" y="68" fill="#55C8FF" font-family="ui-monospace,Consolas,monospace" font-size="12" letter-spacing="3">04 // INDEPENDENT GAME STUDIO</text>
-<g transform="translate(58 112)">
-  <circle cx="84" cy="96" r="74" fill="none" stroke="#55C8FF" stroke-opacity=".22"/>
-  <circle cx="84" cy="96" r="49" fill="#07111C" stroke="#008CFF" stroke-opacity=".7"/>
-  <path d="M58 112c18-42 39-42 54 0M67 80h34M72 65l12-18 12 18" fill="none" stroke="#55C8FF" stroke-width="4"/>
-  <path class="wave" d="M-20 96h38l12-18 16 36 14-20 18 2" fill="none" stroke="#A9EAFF" stroke-opacity=".65"/>
-</g>
-<text x="248" y="148" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="43" font-weight="700" letter-spacing="4">ADDICTITY</text>
-<text x="551" y="148" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="43" font-weight="700" letter-spacing="4">GAMES</text>
-<text x="250" y="184" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="14" font-weight="400" letter-spacing="1.5">STRONG MECHANICS. REPLAYABILITY. IDENTITY.</text>
-<text x="250" y="218" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="15" font-weight="400" letter-spacing="0">Focused games built around strong gameplay loops,</text>
-<text x="250" y="242" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="15" font-weight="400" letter-spacing="0">replayability, and the feeling of one more run.</text>
-<rect x="250" y="258" width="512" height="70" rx="8" fill="#07111C" stroke="#55C8FF" stroke-opacity=".32"/>
-<circle cx="276" cy="280" r="4" fill="#FFC857"/>
-<text x="294" y="285" fill="#FFC857" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1.5">IN DEVELOPMENT</text>
-<text x="276" y="311" fill="#D8F4FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="13" font-weight="400" letter-spacing="0.7">NO RESPITE  //  SURVIVAL • ENDLESS WAVE • ACTION</text>
-<path d="M830 112h310v216H830z" fill="#07111C" stroke="#008CFF" stroke-opacity=".25"/>
-<path d="M856 293l57-64 43 35 72-98 86 127" fill="none" stroke="#008CFF" stroke-opacity=".42" stroke-width="2"/>
-<path d="M856 293h258M856 265h258M856 237h258M856 209h258M856 181h258" stroke="#55C8FF" stroke-opacity=".08"/>
-<text x="856" y="150" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="11" font-weight="400" letter-spacing="2">STUDIO UPLINK</text>
-<text x="856" y="190" fill="#A9EAFF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="17" font-weight="400" letter-spacing="0">addictitygames.com</text>
-<text x="856" y="320" fill="#55C8FF" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="11" font-weight="400" letter-spacing="1.4">OPEN CHANNEL ↗</text>
-<text x="32" y="394" fill="#7299B4" fill-opacity="1" text-anchor="start" font-family="ui-monospace,Consolas,monospace" font-size="10" font-weight="400" letter-spacing="1">PUBLIC STUDIO SIGNAL • VERIFIED 2026-10-11</text>
-
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="266" viewBox="0 0 1200 266" role="img" aria-labelledby="title desc"><title id="title">Addictity Games — enter the studio</title><desc id="desc">Independent game studio. Strong mechanics. Replayability. Identity. An original animated dimensional gateway; click to visit addictitygames.com.</desc><defs>
+      <linearGradient id="edge"><stop stop-color="#55C8FF" stop-opacity=".6"/><stop offset=".5" stop-color="#55C8FF" stop-opacity=".1"/><stop offset="1" stop-color="#008CFF" stop-opacity=".3"/></linearGradient>
+      <radialGradient id="aura"><stop stop-color="#008CFF" stop-opacity=".2"/><stop offset="1" stop-color="#008CFF" stop-opacity="0"/></radialGradient>
+      <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF"/><stop offset=".6" stop-color="#A9EAFF"/><stop offset="1" stop-color="#55C8FF"/></linearGradient>
+      <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5"/></filter>
+      <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#7299B4" opacity=".19"/></pattern>
+      <pattern id="scan" width="3" height="5" patternUnits="userSpaceOnUse"><path d="M0 0H3" stroke="#55C8FF" opacity=".018"/></pattern>
+    </defs><rect x=".5" y=".5" width="1199" height="265" rx="18" fill="#02060B" stroke="url(#edge)"/><rect x="1" y="1" width="1198" height="264" rx="17" fill="url(#dots)"/>
+    <defs><clipPath id="studioClip"><rect x="1" y="1" width="1198" height="264" rx="17"/></clipPath>
+      <linearGradient id="portal" x1="0" x2="1" y1="1" y2="0"><stop stop-color="#07111C"/><stop offset=".58" stop-color="#008CFF" stop-opacity=".08"/><stop offset="1" stop-color="#A9EAFF" stop-opacity=".5"/></linearGradient></defs>
+    <style>
+    .gate{animation:gate 6s ease-in-out infinite} .spark{animation:spark 6s ease-in-out infinite}
+    .horizon{animation:horizon 7s ease-in-out infinite}
+    @keyframes gate{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes spark{0%{stroke-dashoffset:640}100%{stroke-dashoffset:0}}
+    @keyframes horizon{0%,100%{opacity:.15}50%{opacity:.35}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+    </style>
+    <g clip-path="url(#studioClip)">
+    <ellipse cx="979" cy="130" rx="290" ry="210" fill="url(#aura)"/>
+    <g class="horizon" fill="none" stroke="#55C8FF" opacity=".18"><path d="M725 257L958 101"/><path d="M776 257L958 101"/><path d="M827 257L958 101"/><path d="M878 257L958 101"/><path d="M929 257L958 101"/><path d="M980 257L958 101"/><path d="M1031 257L958 101"/><path d="M1082 257L958 101"/><path d="M1133 257L958 101"/><path d="M1184 257L958 101"/><path d="M730 125h455"/><path d="M730 145h455"/><path d="M730 170h455"/><path d="M730 202h455"/><path d="M730 241h455"/><path d="M730 278h455"/></g>
+    <path d="M691 0L585 266" stroke="#55C8FF" opacity=".15"/>
+    <text x="40" y="37" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="2.8" text-anchor="start">INDEPENDENT GAME STUDIO</text>
+    <text x="36" y="114" fill="url(#ice)" font-family="Arial,Helvetica,sans-serif" font-size="66" font-weight="800" letter-spacing="2.5" text-anchor="start">ADDICTITY</text>
+    <text x="40" y="150" fill="#A9EAFF" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="400" letter-spacing="5.8" text-anchor="start">G A M E S</text>
+    <text x="40" y="190" fill="#D8F4FF" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="400" letter-spacing="0" text-anchor="start">Strong mechanics. Replayability. Identity.</text>
+    <text x="40" y="232" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="12" font-weight="400" letter-spacing="1.5" text-anchor="start">ENTER THE STUDIO</text>
+    <path d="M194 228h51m-7-6 7 6-7 6" stroke="#55C8FF" stroke-width="1.7" fill="none"/>
+    <g class="gate">
+      <path d="M830 209L935 37l133 51-103 174z" fill="#02060B" stroke="#114266" stroke-width="1"/>
+      <path d="M849 201L940 54l107 42-90 149z" fill="url(#portal)" stroke="#55C8FF" stroke-opacity=".65"/>
+      <path d="M890 197L955 91l64 24-65 106z" fill="#02060B" stroke="#A9EAFF" stroke-opacity=".85"/>
+      <path class="spark" d="M849 201L940 54l107 42-90 149z" fill="none" stroke="#A9EAFF" stroke-width="2" stroke-dasharray="35 605"/>
+      <path d="M940 54l15 37M849 201l41-4m64 24 3 24m62-130 28-19" stroke="#008CFF" opacity=".65"/>
+      <path d="M935 37l5 17m25 208-8-17m111-157-21 8" stroke="#55C8FF" stroke-width="2"/>
+      <path d="M903 184l26-6 22-28-24 4-24 30z" fill="#55C8FF" opacity=".14"/>
+    </g>
+    <path d="M789 90l-15 8 14 8 14-8zM1090 174l-11 7 12 7 11-7z" fill="#55C8FF" opacity=".6"/>
+    <circle cx="745" cy="170" r="2" fill="#55C8FF"/><circle cx="1106" cy="73" r="2" fill="#55C8FF"/>
+    <text x="1153" y="37" fill="#A9EAFF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="12" font-weight="400" letter-spacing="0" text-anchor="end">addictitygames.com ↗</text>
+    <text x="1153" y="238" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="1.4" text-anchor="end">ONE MORE RUN.</text>
+    </g></svg>

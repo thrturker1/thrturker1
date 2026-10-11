@@ -1,76 +1,58 @@
-<div align="center">
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/hero-static.svg">
+  <img src="assets/hero.svg" width="100%" alt="Tahir — ISTQB Certified Full-Stack QA Specialist. I verify systems. I build worlds. I engineer intelligence. Independent Game Developer, Full-Stack Software Developer, AI & Agent Systems Developer, Founder of Addictity Games.">
+</picture>
 
-![TAHIR — QA Engineering, Game Development, and AI Systems](assets/hero.svg)
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/stack-page-1.svg">
+  <img src="assets/stack.svg" width="100%" alt="Technology deck, four columns and two rows. Blender, Godot Engine, Unity and .NET are pinned on top. Seven pages of QA, infrastructure, software and AI tools cycle below.">
+</picture>
 
-### ISTQB Certified · Full-Stack QA Specialist
-
-**I verify systems. I build worlds. I engineer intelligence.**
-
-Independent Game Developer · Full-Stack Software Developer · AI & Agent Systems Developer · Founder of Addictity Games
-
-</div>
-
----
-
-## `00 // BOOT SEQUENCE`
-
-![Animated terminal introducing Tahir's QA, game development, software, and AI capabilities](assets/terminal.gif)
-
-The control room joins three practices around one habit: build deliberately, test rigorously, and keep the feedback loop visible.
-
-## `01 // VERIFY ↔ CREATE`
-
-![VERIFY and CREATE connected through one engineering core](assets/verify-create.svg)
-
-## `02 // PRIMARY CAPABILITY MATRIX`
-
-![Primary stack: Docker, Kubernetes, Kafka, JMeter, k6, Gauge, Selenium, Playwright, and Postman](assets/primary-stack.svg)
-
-## `03 // FEATURE NODES`
-
-![Featured technologies: Blender, Godot Engine, Unity, and .NET, each marked with a corner star](assets/featured-stack.svg)
-
-<details>
-<summary><code>EXPAND FULL TECH ARSENAL</code></summary>
-
-<br>
-
-![Full technology arsenal grouped by engineering responsibility](assets/full-arsenal.svg)
-
-The inventory groups tools by the job they perform: QA and automation, infrastructure, backend, frontend, desktop/game development, and AI engineering. Signal bars elsewhere in this README are interface decoration—not proficiency scores.
-
-</details>
-
-## `04 // ADDICTITY GAMES`
+<p align="center">
+  <a href="arsenal/7.md"><img src="assets/nav-prev.svg" width="48" alt="Previous technology page"></a>
+  &nbsp; <a href="arsenal/1.md">01</a> · <a href="arsenal/2.md">02</a> · <a href="arsenal/3.md">03</a> · <a href="arsenal/4.md">04</a> · <a href="arsenal/5.md">05</a> · <a href="arsenal/6.md">06</a> · <a href="arsenal/7.md">07</a> &nbsp;
+  <a href="arsenal/2.md"><img src="assets/nav-next.svg" width="48" alt="Next technology page"></a>
+</p>
 
 <a href="https://addictitygames.com">
-  <img src="assets/studio.svg" alt="Addictity Games — independent game studio; strong mechanics, replayability, identity; visit addictitygames.com" width="100%">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/studio-static.svg">
+    <img src="assets/studio.svg" width="100%" alt="Addictity Games — independent game studio. Strong mechanics. Replayability. Identity. Enter the studio.">
+  </picture>
 </a>
 
-## `05 // AGENT FABRIC`
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/terminal-static.svg">
+  <img src="assets/terminal.gif" width="100%" alt="Tahir's terminal: initialize identity, inspect QA/game/AI capabilities, and launch addictitygames.com.">
+</picture>
 
-![Conceptual AI agent flow: input to reason to tools to action to output](assets/agent-network.svg)
+<a href="https://github.com/thrturker1?tab=repositories">
+  <img src="assets/github-stats.svg" width="100%" alt="Verified public GitHub repository and language counts, followers, and snapshot date.">
+</a>
 
-I work on LLM-powered applications, AI agents, tool orchestration, workflow automation, integrations, and model experimentation/training workflows. The diagram is a conceptual systems map, not a claim about a private implementation.
+<p align="center">
+  <a href="https://github.com/thrturker1"><img src="assets/social-github.svg" width="132" alt="GitHub"></a>
+  <a href="https://www.linkedin.com/in/thrturker/"><img src="assets/social-linkedin.svg" width="132" alt="LinkedIn"></a>
+  <a href="https://www.instagram.com/turkertahirr/"><img src="assets/social-instagram.svg" width="132" alt="Instagram"></a>
+  <a href="https://sevro49.github.io/My-Portfolio/public/index.html"><img src="assets/social-portfolio.svg" width="132" alt="Portfolio"></a>
+  <a href="https://addictitygames.com"><img src="assets/social-studio.svg" width="132" alt="Game studio"></a>
+</p>
 
-## `06 // PUBLIC TELEMETRY`
+<details>
+<summary>Full arsenal &amp; motion-free view</summary>
 
-![GitHub activity snapshot generated from Tahir's public GitHub API data](assets/github-stats.svg)
+[Static profile](PROFILE-STATIC.md) · [Browse cards manually →](arsenal/1.md)
 
-This panel is generated locally from the public GitHub API. A scheduled workflow refreshes it without sending profile traffic through a third-party statistics service; if the API is unavailable, the last verified snapshot remains readable.
+**QA & Automation:** Playwright, Selenium, Gauge, Postman, Apache JMeter, Grafana k6, Test Architecture.
 
-## `07 // COMMUNICATION PORTS`
+**DevOps & Infrastructure:** Docker, Kubernetes, Apache Kafka.
 
-![Public communication endpoints](assets/contact.svg)
+**Backend:** .NET, C#, Node.js, Java, Spring.
 
-<div align="center">
+**Frontend:** React, Next.js, Vue.js, JavaScript, TypeScript, Tailwind CSS.
 
-[**GITHUB**](https://github.com/thrturker1) &nbsp;·&nbsp;
-[**LINKEDIN**](https://www.linkedin.com/in/thrturker/) &nbsp;·&nbsp;
-[**INSTAGRAM**](https://www.instagram.com/turkertahirr/) &nbsp;·&nbsp;
-[**PORTFOLIO**](https://sevro49.github.io/My-Portfolio/public/index.html) &nbsp;·&nbsp;
-[**GAME STUDIO**](https://addictitygames.com)
+**Desktop:** Tauri, Electron.js. **Game Development & 3D:** Godot Engine, Unity, Blender.
 
-<sub>TAHIR // CONTROL ROOM · BUILD / TEST / CREATE</sub>
+**AI Engineering:** AI Development, LLM Integration, Model Training, AI Agents, Agent Orchestration, Intelligent Workflows.
 
-</div>
+</details>

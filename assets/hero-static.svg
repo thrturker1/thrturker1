@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img" aria-labelledby="title desc"><title id="title">Tahir — Control Room</title><desc id="desc">Alternating identity and biography: Tahir; QA Engineering, Game Development, AI Systems. ISTQB Certified Full-Stack QA Specialist. I verify systems. I build worlds. I engineer intelligence. Independent Game Developer, Full-Stack Software Developer, AI &amp; Agent Systems Developer, Founder of Addictity Games.</desc><defs>
+      <linearGradient id="edge"><stop stop-color="#55C8FF" stop-opacity=".6" /><stop offset=".5" stop-color="#55C8FF" stop-opacity=".1" /><stop offset="1" stop-color="#008CFF" stop-opacity=".3" /></linearGradient>
+      <radialGradient id="aura"><stop stop-color="#008CFF" stop-opacity=".2" /><stop offset="1" stop-color="#008CFF" stop-opacity="0" /></radialGradient>
+      <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFFFF" /><stop offset=".6" stop-color="#A9EAFF" /><stop offset="1" stop-color="#55C8FF" /></linearGradient>
+      <filter id="bloom" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" /></filter>
+      <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#7299B4" opacity=".19" /></pattern>
+      <pattern id="scan" width="3" height="5" patternUnits="userSpaceOnUse"><path d="M0 0H3" stroke="#55C8FF" opacity=".018" /></pattern>
+    </defs><rect x=".5" y=".5" width="1199" height="349" rx="18" fill="#02060B" stroke="url(#edge)" /><rect x="1" y="1" width="1198" height="348" rx="17" fill="url(#dots)" />
+    <ellipse cx="990" cy="175" rx="230" ry="200" fill="url(#aura)" />
+    <path d="M36 59H760M36 295H762" stroke="#55C8FF" opacity=".12" />
+    <text x="40" y="37" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="13" font-weight="400" letter-spacing="2.8" text-anchor="start">TAHIR / CONTROL ROOM</text>
+    <circle cx="1018" cy="32" r="3" fill="#79D8C8" /><text x="1030" y="37" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="1" text-anchor="start">SYSTEM ONLINE</text>
+    <g class="identity" opacity="1">
+      <text x="60" y="199" fill="url(#ice)" font-family="Arial,Helvetica,sans-serif" font-size="136" font-weight="800" letter-spacing="13" text-anchor="start">TAHIR</text>
+      <g class="scramble" opacity="0"><path d="M61 142h453v8H61zM70 185h440v3H70z" fill="#02060B" /><text x="56" y="199" fill="#55C8FF" font-family="Arial,Helvetica,sans-serif" font-size="136" font-weight="800" letter-spacing="13" text-anchor="start">T4H1R</text></g>
+      <text x="65" y="243" fill="#A9EAFF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="16" font-weight="400" letter-spacing="0.4" text-anchor="start">QA ENGINEERING // GAME DEVELOPMENT // AI SYSTEMS</text>
+      <rect class="cursor" x="65" y="265" width="9" height="3" fill="#55C8FF" />
+      <text x="88" y="273" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="12" font-weight="400" letter-spacing="3" text-anchor="start">BUILD / TEST / CREATE</text>
+    </g>
+    <g class="about" opacity="0">
+      <text x="64" y="104" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="15" font-weight="400" letter-spacing="4" text-anchor="start">ISTQB CERTIFIED</text>
+      <text x="61" y="153" fill="#D8F4FF" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="700" letter-spacing="-0.8" text-anchor="start">Full-Stack QA Specialist</text>
+      <text x="64" y="191" fill="#A9EAFF" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" letter-spacing="0" text-anchor="start">I verify systems. I build worlds.</text>
+      <text x="64" y="220" fill="#A9EAFF" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="400" letter-spacing="0" text-anchor="start">I engineer intelligence.</text>
+      <text x="64" y="253" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">Independent Game Dev  /  Full-Stack Software  /  AI &amp; Agents</text>
+      <text x="64" y="275" fill="#55C8FF" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="12" font-weight="400" letter-spacing="1.8" text-anchor="start">FOUNDER OF ADDICTITY GAMES</text>
+    </g>
+    <g fill="none">
+      <circle cx="985" cy="173" r="121" stroke="#55C8FF" opacity=".12" />
+      <circle cx="985" cy="173" r="91" stroke="#008CFF" opacity=".35" />
+      <g class="orbit"><circle cx="985" cy="173" r="108" stroke="#55C8FF" stroke-dasharray="50 220 9 400" stroke-width="2" />
+      <circle cx="985" cy="65" r="4" fill="#A9EAFF" stroke="none" /></g>
+      <path d="M885 115v-13h26m174 129v13h-26M886 242h-14v-25m225-115h14v25" stroke="#55C8FF" opacity=".5" />
+      <path class="wave" d="M866 184h51l15-27 18 54 27-79 24 57 16-27 16 22h71" stroke="#55C8FF" stroke-width="2" />
+      <path d="M866 184h51l15-27 18 54 27-79 24 57 16-27 16 22h71" stroke="#55C8FF" stroke-width="8" opacity=".22" filter="url(#bloom)" />
+    </g>
+    <text x="985" y="328" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="1.3" text-anchor="middle">VERIFY · CREATE · EVOLVE</text>
+    <text x="40" y="326" fill="#7299B4" font-family="Consolas,DejaVu Sans Mono,monospace" font-size="11" font-weight="400" letter-spacing="1.3" text-anchor="start">ISTQB CERTIFIED  /  FULL-STACK QA</text>
+    <g class="specks" opacity="0"><path d="M205 162h3" stroke="#55C8FF" opacity=".3" /><path d="M896 307h4" stroke="#55C8FF" opacity=".3" /><path d="M1046 68h5" stroke="#55C8FF" opacity=".3" /><path d="M1153 94h6" stroke="#55C8FF" opacity=".3" /><path d="M1123 106h7" stroke="#55C8FF" opacity=".3" /><path d="M792 170h8" stroke="#55C8FF" opacity=".3" /><path d="M432 223h9" stroke="#55C8FF" opacity=".3" /><path d="M763 107h3" stroke="#55C8FF" opacity=".3" /><path d="M861 76h4" stroke="#55C8FF" opacity=".3" /><path d="M332 201h5" stroke="#55C8FF" opacity=".3" /><path d="M432 270h6" stroke="#55C8FF" opacity=".3" /><path d="M337 226h7" stroke="#55C8FF" opacity=".3" /><path d="M968 204h8" stroke="#55C8FF" opacity=".3" /><path d="M74 110h9" stroke="#55C8FF" opacity=".3" /><path d="M748 164h3" stroke="#55C8FF" opacity=".3" /><path d="M1015 66h4" stroke="#55C8FF" opacity=".3" /><path d="M538 178h5" stroke="#55C8FF" opacity=".3" /><path d="M301 238h6" stroke="#55C8FF" opacity=".3" /></g>
+    <rect x="1" y="1" width="1198" height="348" rx="17" fill="url(#scan)" />
+    </svg>

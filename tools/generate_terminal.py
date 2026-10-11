@@ -1,16 +1,17 @@
 from __future__ import annotations
 
-import random
-from pathlib import Path
+from html import escape
 
 from PIL import Image, ImageDraw, ImageFont
 
-from common import ASSETS, BG, BLUE, CYAN, GREEN, HIGHLIGHT, MUTED, SURFACE, TEXT
+from common import ASSETS
 
 
-WIDTH, HEIGHT = 1080, 610
-MARGIN_X, TOP = 42, 74
-FONT_SIZE, LINE_H = 17, 24
+WIDTH, HEIGHT = 1080, 240
+BG, SURFACE = "#050B13", "#091621"
+CYAN, TEXT, MUTED, GREEN = "#67DCED", "#E3F5F8", "#7898AA", "#62E5AF"
+PROMPT = "tahir@controlroom:~$ "
+LEFT, COMMAND_Y, LINE_HEIGHT = 30, 62, 32
 
 
 def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -24,114 +25,129 @@ def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFo
             return ImageFont.truetype(name, size=size)
         except OSError:
             pass
-    return ImageFont.load_default()
+    return ImageFont.load_default(size=size)
 
 
-FONT = load_font(FONT_SIZE)
-FONT_BOLD = load_font(FONT_SIZE, bold=True)
-FONT_SMALL = load_font(12)
+FONT = load_font(21)
+FONT_BOLD = load_font(21, bold=True)
+FONT_SMALL = load_font(13)
 
-
-EVENTS: list[tuple[str, str, int]] = [
-    ("type", "tahir@controlroom:~$ initialize --identity tahir", 34),
-    ("line", "", 210),
-    ("line", "[OK] identity.core ............... TAHIR", 210),
-    ("line", "[OK] quality_engineering ......... LOADED", 180),
-    ("line", "[OK] creative_engine ............. LOADED", 180),
-    ("line", "[OK] agent_systems ............... LOADED", 360),
-    ("line", "", 180),
-    ("type", "tahir@controlroom:~$ inspect --capabilities", 34),
-    ("line", "", 180),
-    ("line", "QA        :: ISTQB Certified / Full-Stack Quality", 150),
-    ("line", "GAMES     :: Godot / Unity / Blender", 150),
-    ("line", "SOFTWARE  :: .NET / Node.js / Web + Desktop", 150),
-    ("line", "AI        :: Agents / Orchestration / Training", 320),
-    ("line", "", 160),
-    ("type", "tahir@controlroom:~$ launch addictity-games", 34),
-    ("line", "", 170),
-    ("line", "[ONLINE] https://addictitygames.com", 450),
-    ("line", "", 150),
-    ("type", "tahir@controlroom:~$ ", 40),
+# Each scene has a command followed by no more than three readable output lines.
+SCENES = [
+    (
+        "initialize --identity tahir",
+        [
+            ("[OK] ISTQB certified / full-stack QA", GREEN),
+            ("     Build worlds. Engineer intelligence.", TEXT),
+        ],
+    ),
+    (
+        "inspect --capabilities",
+        [
+            ("QA     / test architecture + automation", CYAN),
+            ("GAMES  / Godot + Unity + Blender", TEXT),
+            ("AI     / agents + orchestration", GREEN),
+        ],
+    ),
+    (
+        "launch addictity-games",
+        [
+            ("[ONLINE] ADDICTITY GAMES", GREEN),
+            ("         https://addictitygames.com", CYAN),
+        ],
+    ),
 ]
 
 
-def line_color(value: str) -> str:
-    if value.startswith("[OK]") or value.startswith("[ONLINE]"):
-        return GREEN
-    if value.startswith("tahir@"):
-        return HIGHLIGHT
-    return TEXT
+def render(scene_index: int, command: str, shown_lines: int, cursor: bool = True) -> Image.Image:
+    image = Image.new("RGB", (WIDTH, HEIGHT), BG)
+    draw = ImageDraw.Draw(image)
+    draw.rounded_rectangle((1, 1, WIDTH - 2, HEIGHT - 2), radius=16, fill=BG, outline="#194050")
+    draw.rounded_rectangle((2, 2, WIDTH - 3, 42), radius=15, fill=SURFACE)
+    draw.rectangle((2, 24, WIDTH - 3, 42), fill=SURFACE)
+    draw.line((22, 43, WIDTH - 23, 43), fill="#143443")
+    for x, color in ((31, "#286173"), (49, "#398C98"), (67, CYAN)):
+        draw.ellipse((x - 3, 19, x + 3, 25), fill=color)
+    draw.text((88, 14), "TAHIR / LIVE SHELL", font=FONT_SMALL, fill=MUTED)
+    draw.text((WIDTH - 158, 14), f"SESSION 0{scene_index + 1} / 03", font=FONT_SMALL, fill=MUTED)
 
+    draw.text((LEFT, COMMAND_Y), PROMPT, fill=MUTED, font=FONT)
+    command_x = LEFT + draw.textlength(PROMPT, font=FONT)
+    draw.text((command_x, COMMAND_Y), command, fill=TEXT, font=FONT_BOLD)
+    if cursor:
+        cursor_x = command_x + draw.textlength(command, font=FONT_BOLD) + 4
+        draw.rectangle((cursor_x, COMMAND_Y + 4, cursor_x + 9, COMMAND_Y + 22), fill=CYAN)
 
-def background() -> Image.Image:
-    im = Image.new("RGB", (WIDTH, HEIGHT), BG)
-    d = ImageDraw.Draw(im)
-    d.rounded_rectangle((1, 1, WIDTH - 2, HEIGHT - 2), radius=18, fill=BG, outline="#1A6688", width=1)
-    d.rectangle((1, 1, WIDTH - 2, 50), fill=SURFACE)
-    d.line((1, 50, WIDTH - 2, 50), fill="#16364A")
-    for x, c in ((24, "#FF6B6B"), (44, "#FFC857"), (64, GREEN)):
-        d.ellipse((x - 5, 20, x + 5, 30), fill=c)
-    d.text((91, 16), "CONTROL ROOM // LIVE SHELL", fill=MUTED, font=FONT_SMALL)
-    d.text((WIDTH - 235, 16), "SESSION: TR49-VERIFY", fill=MUTED, font=FONT_SMALL)
-    for y in range(54, HEIGHT - 20, 4):
-        d.line((12, y, WIDTH - 12, y), fill="#030B11")
-    d.line((20, HEIGHT - 30, WIDTH - 20, HEIGHT - 30), fill="#0B2737")
-    d.text((24, HEIGHT - 23), "secure channel • deterministic capture • loop-safe", fill="#42677F", font=FONT_SMALL)
-    return im
+    for index, (value, color) in enumerate(SCENES[scene_index][1][:shown_lines]):
+        draw.text((LEFT, COMMAND_Y + 42 + index * LINE_HEIGHT), value, font=FONT, fill=color)
 
-
-def render(lines: list[str], active: str, cursor_on: bool, frame_index: int) -> Image.Image:
-    im = background()
-    d = ImageDraw.Draw(im)
-    all_lines = lines + ([active] if active or cursor_on else [])
-    max_lines = 20
-    visible = all_lines[-max_lines:]
-    for i, value in enumerate(visible):
-        y = TOP + i * LINE_H
-        d.text((MARGIN_X, y), value, fill=line_color(value), font=FONT_BOLD if value.startswith("tahir@") else FONT)
-    if cursor_on and visible:
-        last = visible[-1]
-        bbox = d.textbbox((MARGIN_X, 0), last, font=FONT_BOLD if last.startswith("tahir@") else FONT)
-        cursor_x = bbox[2] + 3
-        cursor_y = TOP + (len(visible) - 1) * LINE_H
-        d.rectangle((cursor_x, cursor_y + 2, cursor_x + 9, cursor_y + FONT_SIZE + 2), fill=CYAN)
-
-    rnd = random.Random(4901 + frame_index)
-    for _ in range(3):
-        x = rnd.randint(820, WIDTH - 35)
-        y = rnd.randint(60, HEIGHT - 48)
-        d.rectangle((x, y, x + rnd.randint(2, 12), y), fill="#104B66")
-    return im
+    draw.line((LEFT, 202, WIDTH - LEFT, 202), fill="#102D3B")
+    draw.ellipse((LEFT, 217, LEFT + 5, 222), fill=GREEN)
+    draw.text((LEFT + 15, 210), "READY", font=FONT_SMALL, fill=MUTED)
+    for index in range(3):
+        x = WIDTH - 137 + index * 36
+        draw.rounded_rectangle((x, 217, x + 25, 220), radius=1, fill=CYAN if index == scene_index else "#183746")
+    return image
 
 
 def build_frames() -> tuple[list[Image.Image], list[int]]:
     frames: list[Image.Image] = []
     durations: list[int] = []
-    lines: list[str] = []
-    frame_index = 0
+    # A shared palette preserves flat UI colors and prevents frame-to-frame flicker.
+    palette_source = render(1, SCENES[1][0], 3)
+    palette = palette_source.quantize(colors=64, method=Image.Quantize.MEDIANCUT)
 
-    def add(active: str, duration: int, cursor: bool = True) -> None:
-        nonlocal frame_index
-        frames.append(render(lines, active, cursor, frame_index).convert("P", palette=Image.Palette.ADAPTIVE, colors=64))
+    def add(scene_index: int, command: str, shown_lines: int, duration: int, cursor: bool = True) -> None:
+        frame = render(scene_index, command, shown_lines, cursor)
+        frames.append(frame.quantize(palette=palette, dither=Image.Dither.NONE))
         durations.append(duration)
-        frame_index += 1
 
-    for kind, value, timing in EVENTS:
-        if kind == "type":
-            for n in range(0, len(value) + 1, 2):
-                add(value[:n], timing, True)
-            if len(value) % 2:
-                add(value, timing, True)
-            add(value, 260, False)
-            lines.append(value)
+    for scene_index, (command, output) in enumerate(SCENES):
+        add(scene_index, "", 0, 420)
+        for length, character in enumerate(command, start=1):
+            delay = 90 if character == " " else 100 if character == "-" else 40 + (length % 3) * 10
+            add(scene_index, command[:length], 0, delay)
+        add(scene_index, command, 0, 320, False)
+        for count in range(1, len(output) + 1):
+            add(scene_index, command, count, 220, False)
+        if scene_index == len(SCENES) - 1:
+            add(scene_index, command, len(output), 4000)
         else:
-            lines.append(value)
-            add("", timing, True)
-
-    add("", 420, False)
-    add("", 420, True)
-    add("", 2200, True)
+            add(scene_index, command, len(output), 500)
+            add(scene_index, command, len(output), 420, False)
+            add(scene_index, command, len(output), 800)
     return frames, durations
+
+
+def write_static() -> None:
+    scene_index = len(SCENES) - 1
+    command, output = SCENES[scene_index]
+    render(scene_index, command, len(output)).save(ASSETS / "terminal-static.png", optimize=True)
+    font = 'font-family="Consolas,DejaVu Sans Mono,monospace"'
+    output_lines = "".join(
+        f'<text x="30" y="{122 + index * LINE_HEIGHT}" fill="{color}" font-size="21" xml:space="preserve">{escape(value)}</text>'
+        for index, (value, color) in enumerate(output)
+    )
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img">
+<title>Tahir — Addictity Games terminal</title>
+<desc>The terminal launches Addictity Games. Studio website: https://addictitygames.com</desc>
+<rect x="1" y="1" width="1078" height="238" rx="16" fill="{BG}" stroke="#194050"/>
+<path d="M17 2H1063Q1078 2 1078 17V42H2V17Q2 2 17 2Z" fill="{SURFACE}"/>
+<path d="M22 43H1057M30 202H1050" stroke="#143443"/>
+<circle cx="31" cy="22" r="3" fill="#286173"/><circle cx="49" cy="22" r="3" fill="#398C98"/><circle cx="67" cy="22" r="3" fill="{CYAN}"/>
+<g {font}>
+<text x="88" y="26" font-size="13" fill="{MUTED}">TAHIR / LIVE SHELL</text>
+<text x="922" y="26" font-size="13" fill="{MUTED}">SESSION 03 / 03</text>
+<text x="30" y="80" font-size="21" fill="{TEXT}" xml:space="preserve"><tspan fill="{MUTED}">{escape(PROMPT)}</tspan><tspan font-weight="700">{escape(command)}</tspan><tspan fill="{CYAN}"> ▌</tspan></text>
+{output_lines}
+<text x="45" y="222" font-size="13" fill="{MUTED}">READY</text>
+</g>
+<circle cx="32.5" cy="219.5" r="2.5" fill="{GREEN}"/>
+<path d="M943 218H968M979 218H1004" stroke="#183746" stroke-width="3" stroke-linecap="round"/>
+<path d="M1015 218H1040" stroke="{CYAN}" stroke-width="3" stroke-linecap="round"/>
+</svg>
+'''
+    (ASSETS / "terminal-static.svg").write_text(svg, encoding="utf-8", newline="\n")
 
 
 def main() -> None:
@@ -147,7 +163,11 @@ def main() -> None:
         optimize=True,
         disposal=1,
     )
-    print(f"Generated {output.relative_to(Path.cwd())}: {len(frames)} frames, {output.stat().st_size / 1024:.1f} KiB")
+    write_static()
+    if output.stat().st_size > 2_000_000:
+        raise SystemExit("terminal.gif exceeds its 2 MB performance budget")
+    print(f"Generated assets/{output.name}: {WIDTH}x{HEIGHT}, {len(frames)} frames, {sum(durations) / 1000:.1f}s, {output.stat().st_size / 1024:.1f} KiB")
+    print("Generated assets/terminal-static.svg and assets/terminal-static.png")
 
 
 if __name__ == "__main__":
