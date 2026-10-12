@@ -21,7 +21,7 @@ PUBLIC_LINKS = {
     "https://github.com/thrturker1",
     "https://www.linkedin.com/in/thrturker/",
     "https://www.instagram.com/turkertahirr/",
-    "https://sevro49.github.io/My-Portfolio/public/index.html",
+    "https://thrturker.com",
     "https://addictitygames.com",
 }
 PROFILE_ASSETS = {

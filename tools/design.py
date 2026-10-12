@@ -39,7 +39,7 @@ CONTACTS = [
     ("github", "GitHub", "https://github.com/thrturker1"),
     ("linkedin", "LinkedIn", "https://www.linkedin.com/in/thrturker/"),
     ("instagram", "Instagram", "https://www.instagram.com/turkertahirr/"),
-    ("portfolio", "Portfolio", "https://sevro49.github.io/My-Portfolio/public/index.html"),
+    ("portfolio", "Portfolio", "https://thrturker.com"),
     ("studio", "Game studio", "https://addictitygames.com"),
 ]
 

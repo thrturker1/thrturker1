@@ -56,7 +56,7 @@ python tools/validate.py
 
 ## Links and rendering
 
-Current destinations are [GitHub](https://github.com/thrturker1), [LinkedIn](https://www.linkedin.com/in/thrturker/), [Instagram](https://www.instagram.com/turkertahirr/), [Portfolio](https://sevro49.github.io/My-Portfolio/public/index.html), and [Addictity Games](https://addictitygames.com).
+Current destinations are [GitHub](https://github.com/thrturker1), [LinkedIn](https://www.linkedin.com/in/thrturker/), [Instagram](https://www.instagram.com/turkertahirr/), [Portfolio](https://thrturker.com), and [Addictity Games](https://addictitygames.com).
 
 GitHub README content cannot run JavaScript, so the technology deck uses a self-contained SVG animation instead of click-controlled state. Reduced-motion visitors receive the first static 4 × 2 page. All artwork is self-contained: no scripts, remote stylesheets, remote fonts, or runtime image dependencies.
 
